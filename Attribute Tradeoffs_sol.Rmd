@@ -1915,13 +1915,14 @@ We also have to note, that all of our results are based on an approach from an e
 
 * Knittel, Christopher R. 2011. "Automobiles on Steroids: Product Attribute Trade-Offs and Technological Progress in the Automobile Sector." American Economic Review, 101(7): 3368-99. DOI: 10.1257/aer.101.7.3368
 
-* Wooldridge, Jeffrey M. (2013). Introductory Econometrics: A Modern Approach (Fifth international ed.). Australia: South-Western.
+* Wooldridge, Jeffrey M. (2013). Introductory Econometrics: A Modern Approach (Fifth international ed.). Australia: South-Western. ISBN:978-1-111-53104-1
 
-* Hogg, R. V. and Craig, A. T. Introduction to Mathematical Statistics, 5th ed. New York: Macmillan, 1995.
+* Hogg, R. V. and Craig, A. T. Introduction to Mathematical Statistics, 5th ed. New York: Macmillan, 1995. ISBN:
+0-02-978990-7
 
-* Ligges, U. (2008): Programmieren mit R. 3. Auflage, Berlin Heidelberg: Springer-Verlag. 
+* Ligges, U. (2008): Programmieren mit R. 3. Auflage, Berlin Heidelberg: Springer-Verlag. ISBN 978-3-540-79998-6
 
-* Stock, J. H., Watson, M. W. (2007): Introduction to Econometrics. Second Edition, Boston: Pearson Education Inc.
+* Stock, J. H., Watson, M. W. (2007): Introduction to Econometrics. Second Edition, Boston: Pearson Education Inc. ISBN: 978-0-321-27887-6
 
 * Wickham, Hadley. (2009). "ggplot2: Elegant Graphics for Data Analysis". Springer. ISBN: 978-0-387-98140-6
 
@@ -1933,15 +1934,7 @@ We also have to note, that all of our results are based on an approach from an e
 
 * Charles W. Cobb, Paul H. Douglas (1928): A Theory of Production, [link](https://www.aeaweb.org/aer/top20/18.1.139-165.pdf)
 
-* Herbert Stocker: Methoden der Empirischen Wirtschaftsforschung Chapter 13. [link](http://www.uibk.ac.at/econometrics/einf/kap11.pdf)
-
-* https://www.transportation.gov/mission/sustainability/corporate-average-fuel-economy-cafe-standards#sthash.OstJpwfC.dpuf, 28.11.15
-
-* http://www.ucsusa.org/clean-vehicles/fuel-efficiency/fuel-economy-basics.html#bf-toc-0, 28.11.15
-
-* http://www.c2es.org/federal/executive/vehicle-standards, 28.11.15
-
-* http://www.nhtsa.gov/fuel-economy, 28.11.15
+* Herbert Stocker: Methoden der Empirischen Wirtschaftsforschung Chapter 13. ISBN:978-3-868-94085-5 [link](http://www.uibk.ac.at/econometrics/einf/kap11.pdf)
 
 
 **R and packages in R** 
@@ -1974,3 +1967,8 @@ We also have to note, that all of our results are based on an approach from an e
 
 * William Sribney, StataCorp (1998): Comparison of standard errors for robust, cluster, and standard estimators [link](http://www.stata.com/support/faqs/statistics/standard-errors-and-vce-cluster-option/) 
 
+* U.S. DEPARTMENT OF TRANSPORTATION, Corporate Average Fuel Economy (CAFE) Standards, Updated: Wednesday, August 27, 2014  [link](https://www.transportation.gov/mission/sustainability/corporate-average-fuel-economy-cafe-standards#sthash.OstJpwfC.dpuf), 28.11.15
+
+* Union of Concerned Scientists, Fuel Economy Basics, [link](http://www.ucsusa.org/clean-vehicles/fuel-efficiency/fuel-economy-basics.html#bf-toc-0), 28.11.15
+
+* U.S. Department of Transportation, CAFE - Fuel Economy [link](http://www.nhtsa.gov/fuel-economy), 28.11.15

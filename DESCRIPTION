@@ -1,0 +1,12 @@
+Package: RTutorAttributeTradeOffs
+Type: Package
+Title: RTutor Problem set Attribute Tradeoffs
+Version: 0.1
+Date: 2015-16-12
+Author: Marius Breitmayer
+Maintainer: Marius Breitmayer <MBreitmayer@gmail.com>
+Description: RTutor Problem Set Attribute Tradeoffs
+License: Not yet licensed by the author. The default suggestion for licensing is
+	Problem set content: Creative Commons (CC BY-SA)
+	Package code: GPL >= 2.0
+Depends: RTutor, ggplot2, broom, dplyr, foreign, googleVis, lfe, stargazer

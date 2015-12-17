@@ -13,7 +13,7 @@ if (!require(devtools))
 source_gist("gist.github.com/skranz/fad6062e5462c9d0efe4")
 install.rtutor(update.github=TRUE)
   
-install_github("MariusBreitmayer/RTutorAttributeTradeOffs")
+install_github("MariusBreitmayer/AttributeTradeOffs")
 ```
 
 ## 2. Show and work on the problem set

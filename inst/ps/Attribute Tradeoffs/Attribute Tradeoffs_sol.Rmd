@@ -305,6 +305,8 @@ While `horsepower` has increased almost linear every single year with a slightly
 Congratulations, You've earned this award for getting an overview of the data we will be using in this Problem Set! 
 #>
 
+*This exercise refers to page 3377 of the paper.* 
+
 ## Exercise 2: Motivation: CAFE - standards
 
 After we did get a rough overview of the data at hand, let us take a small step away from the data and talk about why we are doing this. 
@@ -665,6 +667,8 @@ Therefore we could assume, that there might be a correlation between the values 
 Congratulations, You've earned this award for creating scatter plots! 
 #>
 
+*This exercise refers to page 3378 and 3379 of the paper.*
+
 ## Exercise 4: Theoretical Model
 
 Before we start using our data to get some empirical results, we should think of a theoretical model. 
@@ -793,6 +797,8 @@ As our data allows, we will try to control a number of these factors, labelled a
 
 Let's start with the empirical work in the next exercise.
 
+*This exercise refers to page 3371 of the paper.*
+
 ## Exercise 5.1: Empirical Model - Cobb Douglas
 
 In this part of the Problem Set, we will focus on a Cobb-Douglas functional forms to estimate the level sets. 
@@ -888,7 +894,7 @@ Source: A Guide to Econometrics, Peter Kennedy (2008), p. 111
 
 #>
 
-**For exercise 4.1, we will not take a look at Technological progress $T_t$. It will be discussed in Exercise 4.2**
+**For exercise 5.1, we will not take a look at Technological progress $T_t$. It will be discussed in Exercise 5.2**
 
 ### b) loading Data 
 
@@ -1187,6 +1193,7 @@ We can also see, that the estimated trade-offs (and as you will see in further e
 
 After we now got an idea about how trade-offs between fuel economy and other vehicle characteristics work, we can now take a look at Technological Progress $T_t$ in the next exercise.
 
+*This exercise refers to page 3372 and 3381 of the paper.*
 
 ## Exercise 5.2: Cobb Douglas - Technological Progress
 
@@ -1469,6 +1476,9 @@ progressm1
 
 Taking the results from Model 1, we can say that an increase in fuel economy by ~64.4 percent could have been possible.
 
+
+*This exercise refers to page 3382, 3384 and 3385 of the paper.*
+
 ## Exercise 6.1: Robustness: Cobb-Douglas
 
 After we have managed to get an idea of $T_t$, one might be concerned that a supercharger or a turbocharger are some kind of "technological progress". If this is the case, they should not be considered in our regression, because they will already be represented in $T_t$.
@@ -1558,6 +1568,8 @@ For the discussion of this models Technological Progress, see Exercise 6.3.
 #< award "Cobb-Douglas!"
 Congratulations, You've earned this award for creating the Cobb-Douglas Models! 
 #>
+
+*This exercise refers to page 3372 and 3381 of the paper.*
 
 ## Exercise 6.2: Robustness: Translog
 
@@ -1773,6 +1785,8 @@ Since the efficiency gains of automatic transmissions, in relation to manual tra
 Congratulations, You've earned this award for completing the translog regressions! 
 #>
 
+*This exercise refers to page 3372 and 3381 of the paper.*
+
 ## Exercise 6.3: Robustness: Technological Progress
 
 Since are not only interested in Trade offs between the different attributes, but also in how technology has changed over the course of our data, we are now trying to estimate a value for this progress every year in each of our Models.
@@ -1876,6 +1890,8 @@ This, in contrast to the 18 percent "real incrase" we concluded in exercise 1, i
 Congratulations, You've earned this award for completing the last exercise! 
 #>
 
+*This exercise refers to page 3382 and 3384 of the paper.*
+
 ## Exercise 7: Conclusion
 
 Before we are coming to a conclusion for this problem set, let's see what you have been awarded for in this problem set.
@@ -1969,10 +1985,16 @@ We also have to note, that all of our results are based on an approach from an e
 
 * Vigen, Tyler. (2014). Spurious Correlations. http://tylervigen.com/.
 
-* William Sribney, StataCorp (1998): Comparison of standard errors for robust, cluster, and standard estimators [link](http://www.stata.com/support/faqs/statistics/standard-errors-and-vce-cluster-option/) 
+* William Sribney, StataCorp (1998): Comparison of standard errors for robust, cluster, and standard estimators [link](http://www.stata.com/support/faqs/statistics/standard-errors-and-vce-cluster-option/), 20.11.15
 
 * U.S. DEPARTMENT OF TRANSPORTATION, Corporate Average Fuel Economy (CAFE) Standards, Updated: Wednesday, August 27, 2014  [link](https://www.transportation.gov/mission/sustainability/corporate-average-fuel-economy-cafe-standards#sthash.OstJpwfC.dpuf), 28.11.15
 
 * Union of Concerned Scientists, Fuel Economy Basics, [link](http://www.ucsusa.org/clean-vehicles/fuel-efficiency/fuel-economy-basics.html#bf-toc-0), 28.11.15
 
 * U.S. Department of Transportation, CAFE - Fuel Economy [link](http://www.nhtsa.gov/fuel-economy), 28.11.15
+
+**Licence**
+
+Author: Marius Breitmayer
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>.

@@ -1,4 +1,4 @@
-# Problem Set Product Attribute Trade-Offs
+# Problem Set Product Attribute Trade-Offs in the Automobile Sector
 
   
 ```{r include=FALSE}
@@ -23,11 +23,11 @@ In this interactive problem set, we are going to reproduce his study and discuss
 
 ## Exercise Overview
 
-Have you ever been at the gas station and wondered how much fuel your car would need if all the innovation achieved over the last 25 years have improved fuel economy instead of engine power characteristics, weight or other characteristics?
+Have you ever been at the gas station and wondered how much fuel your car would need if all the innovation achieved over the last 25 years has improved fuel economy instead of engine power characteristics, weight or other characteristics?
 
 Manufacturers as well as consumers face technological trade-offs when choosing between fuel economy, engine power characteristics or even weight of a car every time they want to produce or buy one. 
 The goal of this problem set is not only to better understand these trade-offs, but also to try to estimate the technological progress that has occurred over the observed timeframe.   
-Using data from 1980 to 2006, we will reproduce the estimates for technological trade-offs that manufacturers and consumers face when choosing between fuel economy, weight and engine power characteristics. We will also examine how the relationship between these different factors have changed over that time.
+Using data from 1980 to 2006, we will reproduce the estimates for technological trade-offs that manufacturers and consumers face when choosing between fuel economy, weight and engine power characteristics. We will also examine how the relationships between these different factors have changed over that time.
 
 In this problem set we would like to find an answer to the central question of how fuel economy in 2006 would compare to fuel economy in 1980 if we had held size and power constant. 
 
@@ -38,7 +38,7 @@ In this problem set we would like to find an answer to the central question of h
 In this chapter we will get a first idea about how our data is structured. This will also help us to get a first idea of how different attributes had changed over that time.
 
 * **Exercise 2: Motivation: CAFE - standards**  
-Here we will take a look at how policy can incentivise car manufacturers to produce cars with a better fuel economy. This will help us to estimate if the actions had a positive effect on fuel economy. 
+Here we will take a look at how policy can incentivize car manufacturers to produce cars with a better fuel economy. This will help us to estimate if the actions had a positive effect on fuel economy. 
 
 * **Exercise 3: Graphical Evidence**  
 Here we will analyse data from cars produced between the years 1980 and 2006 to get a deeper understanding of how different car attributes influence fuel economy.
@@ -49,8 +49,8 @@ In this exercise we will consider the theoretical model that Christopher R. Knit
 * **Exercise 5.1: Empirical Model: Cobb-Douglas**  
 In this chapter we will estimate to what extend a particular attribute can influence fuel economy. This will help us to understand the trade-offs between fuel economy and other vehicle characteristics that manufacturers and consumers face.
 
-* **Exercise 5.2: Cobb Douglas: Technological Progress**  
-Here we will take a closer look at the technological progress. The goal is to understand how technological progress is mesured and how fuel economy could look like in 2006 if we held other characteristics constant at their level of 1980.
+* **Exercise 5.2: Cobb-Douglas: Technological Progress**  
+Here we will take a closer look at the technological progress. The goal is to understand how technological progress is measured and how fuel economy could look like in 2006 if we held other characteristics constant at their level of 1980.
 
 * **Exercise 6.1: Robustness: Cobb-Douglas**  
 In this exercise we will take a critical view of the models we have used so far, and think of a way our model could be further improved. 
@@ -88,7 +88,7 @@ Load it with the command `library()` and add the name of the package.
 ```
 
 After loading the foreign package we can now use the command `read.dta()`. 
-It works the same way as `read.table()` but as the name already suggests it works with `.dta`files. 
+It works the same way as `read.table()` but as the name already suggests it works with `.dta` files. 
 Please use the `read.dta()` command to load the `Steroids_AER_data_post.dta` and assign it to a variable called `dat`.
 
 info("read.dta()") # Run this line (Strg-Enter) to show info
@@ -103,7 +103,7 @@ The Data contains model-level data on almost all vehicles sold in the United Sta
 
 ### b) Data Overview I
 
-Since we are now able to work with our data, we will first take a look at which columns are in the data set. Use the `colnames()`command with our newly generated `dat` to show the names of the columns.
+Since we are now able to work with our data, we will first take a look at which columns are in the data set. Use the `colnames()` command with our newly generated `dat` to show the names of the columns.
 
 ```{r "1__Descriptive_statistics__3"}
 # use `colnames()` on our loaded data "dat" to show the names of the columns.
@@ -134,7 +134,7 @@ For more information on outlier, see the info box.
 
 info("Outlier") # Run this line (Strg-Enter) to show info
 
-To select cars only, and get a first impression on the variable `mpg` (which will later be also refered as fuel economy), click *check*.
+To select cars only, and get a first impression on the variable `mpg` (which will later be also referred as fuel economy), click *check*.
 
 ```{r "1__Descriptive_statistics__5"}
 # we first want to use cars only
@@ -183,10 +183,10 @@ $$ \bar x = \dfrac{1}{n}\sum_{i=1}^n x_{i} $$
 
 What this results in is that a car that was sold only once, is represented the same as a car that was sold a million times.
 
-Eventough our mean values are not a proper representation of the average sold car, it still helps us to get a first impression of our data at hand.
+Even though our mean values are not a proper representation of the average car sold, it still helps us to get a first impression of our data at hand.
 
 After we now got some means over the whole observation (years 1980 to 2006), we might as well be interested at how these car attributes differ over time. 
-For now, let's keep looking at Fuel Economy(mpg) and Horsepower(hp) only. 
+For now, let's keep looking at Fuel Economy (mpg) and Horsepower (hp) only. 
 
 We will therefore plot the mean values of `mpg` and `hp` for each year. 
 
@@ -195,7 +195,7 @@ To do so, click check:
 # First we use the package 'dplyr'
 library(dplyr)
 # The idea is, to plot the means of every year with X-values regarding the year, and Y-values being the mean in a given year.
-# Therefore it is usefull to have groups of years in our data. 
+# Therefore it is useful to have groups of years in our data. 
 # We use group_by from the package dplyr to generate these groups. 
 # Every group now contains all the cars produced in the given year. 
 # If we now use the mean() command on mpg, and horsepower we can plot the data easy. 
@@ -219,7 +219,7 @@ Your task now is to do this kind of plot for horsepower. You don't have to summa
 Let's take a look at the two graphs: 
 
 The difference in the two graphs is quiet obvious. 
-While `horsepower` has increased almost linear every single year with a slightly higher increase in the last years, `fuel economy` has drastically increased in the first five years but then started to fluctuate between 27 and 29 miles per gallon. Sadly even tough fuel economy was fairly constant a small negative trend can be indentified later in the sample. Overall, mpg icreased by ~18 percent from 1980 to 2006. Especially in the last years, the years horsepower drastically increased, a decline in fuel economy is recognisable. One possible reason for this development of mpg will be discussed in the next exercise.
+While `horsepower` has increased almost linear every single year with a slightly higher increase in the last years, `fuel economy` has drastically increased in the first five years but then started to fluctuate between 27 and 29 miles per gallon. Sadly even though fuel economy was fairly constant a small negative trend can be identified later in the sample. Overall, mpg increased by ~18 percent from 1980 to 2006. Especially in the last years, the years horsepower drastically increased, a decline in fuel economy is recognizable. One possible reason for this development of mpg will be discussed in the next exercise.
 
 
 *This exercise refers to page 3377 of the paper.* 
@@ -240,7 +240,7 @@ The first fuel economy standards, called Corporate Average Fuel Economy (CAFE) s
 
 The purpose of the CAFE standards is to reduce the energy use by increasing the fuel economy of cars and light trucks. 
 
-CAFE standards are fleet-wide averages in fuel economy, weighted by sales, that each manufacturer's fleet has to achieve each year, since 1978. 
+CAFE standards are fleet-wide averages in fuel economy, weighted by sales, which each manufacturer's fleet has to achieve each year, since 1978. 
 
 In case a manufacturer does not comply he will be fined. 
 The fine is $5.50 for every 0.1 mpg below standard, multiplied by the number of cars in the manufacturer's new car fleet in that year. 
@@ -274,10 +274,10 @@ By using the `%>%` operator the output of one command becomes the input for the 
 # load dplyr
 library(dplyr)
 # after this, we are going to create a command chain using %>%
-# we are first going to group our data by the manufactuerer, since cafe Standards are manufacturer fleet averages
+# we are first going to group our data by the manufacturer, since cafe Standards are manufacturer fleet averages
 cafe1 = cafe1%>% 
   group_by(mfr) %>%
-# after this we summarise by the mean fuel economy.
+# after this we summarize by the mean fuel economy.
 summarise(mpg = mean(mpg)) %>%
 # lastly we subset those manufactuerers whose mean fuel economy is lower than 27.5.
 filter(mpg < 27.5)
@@ -285,7 +285,7 @@ filter(mpg < 27.5)
 cafe1
 ```
 
-As we can see in our case Audi, BMW, Ferrari, Fiat, Jaguar, Lotus, Maserati, Mecedes, Peugeot, Pininfari, Porsche, Renault, Saab and Volvo did not archieve the target fuel economy of 27.5 mpg by year 1985. 
+As we can see in our case Audi, BMW, Ferrari, Fiat, Jaguar, Lotus, Maserati, Mercedes, Peugeot, Pininfari, Porsche, Renault, Saab and Volvo did not achieve the target fuel economy of 27.5 mpg by year 1985. 
 
 ### a) Manufacturer fuel economy over the years
 Now that we know how fuel economy across manufacturers looked like in 1985, would it not be interesting how the fuel economy changed across all manufacturers within the years? 
@@ -310,7 +310,7 @@ df = dat %>%
 # we set the value for each mfr to the mean values of hp, mpg, accel 
 # we also generate a new variable called models which represents the amount of different cars in each year
   summarise(mpg=mean(mpg), hp=mean(hp), accel=mean(accel), models=n()) %>%
-# lastly we create a new column containting the manufacturer name and call it mfr
+# lastly we create a new column containing the manufacturer name and call it mfr
   mutate(id = mfr)
 
 library(googleVis)
@@ -335,12 +335,12 @@ In our Motion Chart, each point represents a different manufacturer.
 
 Let's take a look at the motion chart. You can always watch it again by clicking the play button. 
 In the early years of our sample (1980 - 1985), a trend to increase fuel economy can be recognized. Most of the points are moving upwards in the coordinate system and only a few manufacturers are increasing horsepower. If we then take a look at the years after 1985, fuel economy doesn't increase anymore for most manufacturers. In contrast almost all points tend to move further to the right side of the coordinate system, which represents an increase in horsepower.
-What this means is, that maybe there has been an incentive early in the sample to incease fuel economy over other characteristics such as horsepower.
-If we now take a look at the values in 2006, we can see that manufacturers with low fuel economy (<20 mpg), tend to have small points. This means, that they have a small amount of different models in this year. In our case the manufacturers Ferrari, Bentley, Aston Martin and Masserati all have less than 5 models. This is consistent with Yacobucci and Bamberger if they say that most of the CAFE fines have been paid by small european manufacturers. 
+What this means is, that maybe there has been an incentive early in the sample to increase fuel economy over other characteristics such as horsepower.
+If we now take a look at the values in 2006, we can see that manufacturers with low fuel economy (<20 mpg), tend to have small points. This means, that they have a small amount of different models in this year. In our case the manufacturers Ferrari, Bentley, Aston Martin and Maserati all have less than 5 models. This is consistent with Yacobucci and Bamberger if they say that most of the CAFE fines have been paid by small European manufacturers. 
 
 ### b) Mean fuel economy vs. CAFE Standards
 
-After getting an idea how the manufacturers average non saled weighted fleet looked like over the years, we might now be interested in how CAFE Standards have changed compared to the average fuel economy.
+After getting an idea how the manufacturers average non sale weighted fleet looked like over the years, we might now be interested in how CAFE Standards have changed compared to the average fuel economy.
 
 To visualize how the unweighted fuel economy has changed compared to CAFE standards over the years, we can plot both values. 
 The data on CAFE standards was collected from National Highway Traffic Safety Administration. "Summary of Fuel Economy Performance" [link](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwjYwcqkmbPJAhXBkXIKHdhNBmoQFggmMAE&url=http%3A%2F%2Fwww.nhtsa.gov%2Fstaticfiles%2Frulemaking%2Fpdf%2Fcafe%2FOct2012_Summary_Report.pdf&usg=AFQjCNG8qgMJXK0xOYjYu2nDUy67FAM4qg&cad=rja)
@@ -362,9 +362,9 @@ cafecars_mpg
 ```
 
 As we can see, the increase in CAFE Standards for cars was great in the early years, but has not been increased after 1985. In contrast, CAFE Standards have been decreased in 1986, but increased back to the 1985 level in 1990. 
-In relation to this, the average car fuel economy of our sample has been higher than the requirements almost all the time. We have to note here again, that our means are not sales weighted. This might result into corrupted values, because a car that has been sold to a lesser extend, is "overrepresentated", while cars that have been sold many times are "underrepresentated".
+In relation to this, the average car fuel economy of our sample has been higher than the requirements almost all the time. We have to note here again, that our means are not sales weighted. This might result into corrupted values, because a car that has been sold to a lesser extent is "overrepresented", while cars that have been sold many times are "underrepresented".
 
-Nevertheless, we can estimate a trend. While the standards increased, the fuel economy did increase aswell.
+Nevertheless, we can estimate a trend. While the standards increased, the fuel economy did increase as well.
 After 1990, the last year CAFE standards were changed, the mean fuel economy has been decreasing almost every year, while even falling below the requirements in 2006. Therefore we might be able to find a correlation between fuel economy and CAFE standards. 
 
 Let's have a look at the correlation coefficient. 
@@ -373,31 +373,31 @@ Let's have a look at the correlation coefficient.
 cor(cafe$cafe, cafe$mpg)
 ```
 
-Our correlation coefficient is `0.8058689` and eventhough our sample is quiet small, this suggests a strong positive linear relationship. 
-What this indicates is, that if we increase CAFE Standards this results in higher average fuel economy.
+Our correlation coefficient is `0.8058689` and even though our sample is quiet small, this suggests a strong positive linear relationship. 
+What this indicates is that if we increase CAFE Standards this results in higher average fuel economy.
 This would be one way to explain why there was an increase in fuel economy early, which later changed to increasing other characteristics such as horsepower. 
 
 info("cum hoc ergo propter hoc") # Run this line (Strg-Enter) to show info
 
 What we know after this exercise is that, implying a causal relationship, an increase in CAFE Standards should result in an increase in fuel economy.
 As long as the CAFE Standards are fulfilled, which equals not having to pay a fee, manufacturers are going to increase those characteristics which are important to the customer. Examples of these characteristics are acceleration or horsepower. 
-Manufacturers who do not comply with the standards, are valuing the consumer preferences higher than the resulting fine.
+Manufacturers, who do not comply with the standards, are valuing the consumer preferences higher than the resulting fine.
 But before we are using this information in order to give any advice, we have to get a better understanding how different car attributes influence fuel economy. This will be the topic in exercise 3. 
 
-Source: https://www.transportation.gov/mission/sustainability/corporate-average-fuel-economy-cafe-standards#sthash.OstJpwfC.dpuf, 28.11.15
+Source: U.S. Department of Transportation (2014): Corporate Average Fuel Economy (CAFE) Standards [link](https://www.transportation.gov/mission/sustainability/corporate-average-fuel-economy-cafe-standards#sthash.OstJpwfC.dpuf), 28.11.15
+
+Source: U.S. Department of Transportation (2003): CAFE - Fuel Economy [link](http://www.nhtsa.gov/fuel-economy) , 28.11.15
 
 Source: http://www.ucsusa.org/clean-vehicles/fuel-efficiency/fuel-economy-basics.html#bf-toc-0, 28.11.15
 
-Source: http://www.nhtsa.gov/fuel-economy, 28.11.15
-
 ## Exercise 3: Graphical Evidence
 
-After getting a first idea of our data and how policy might create incentive for manufacturers to increase their fuel economy in exercises one and two, we will get get a deeper understanding how different car attributes influence fuel economy in this exercise. 
+After getting a first idea of our data and how policy might create incentive for manufacturers to increase their fuel economy in exercises one and two, we will get a deeper understanding how different car attributes influence fuel economy in this exercise. 
 
 ### a) Density Plots
 
-First we are going to try to get a graphical view of the data at hand. The R package `ggplot2` contains a nice array of tools to use when creating graphics. 
-First of, since we still want to know a little more about our data, we will create some density plots.
+First we wil get a graphical view of the data at hand. The R package `ggplot2` contains a nice array of tools to use when creating graphics. 
+For the beginning, since we still want to know a little more about our data, we will create some density plots.
 
 info("Density") # Run this line (Strg-Enter) to show info
 
@@ -434,7 +434,7 @@ p1
 
 ```
 
-We can see that the fuel economy density in 1980 is slimmer than in 2006. This means that in 1980 the fuel economy was more similar between cars than in 2006. Another point to mention is, that the peek has shifted from around 18 miles per gallon in 1980, to roughly 26 miles per gallon in 2006. Because the density is wider in 2006, we can assume that customers have more options to give their preferences to fuel economy when buying a car. Another thing to notice is, that the density for 23 miles per gallon is roughly the same in 1980 and 2006. This means, that there are almost the same amount of cars that are capable of going 23 miles per gallon in 1980 and 2006. The main difference though is, that in 1980 23 miles per gallon has been on the top half of fuel economy, while in 2006 23 miles per gallon is bottom half of fuel economy. 
+We can see that the fuel economy density in 1980 is slimmer than in 2006. This means that in 1980 the fuel economy was more similar between cars than in 2006. Another point to mention is that the peek has shifted from around 18 miles per gallon in 1980, to roughly 26 miles per gallon in 2006. Because the density is wider in 2006, we can assume that customers have more options to give their preferences to fuel economy when buying a car. In addition it is to notice that the density for 23 miles per gallon is roughly the same in 1980 and 2006. This means, that there are almost the same amount of cars that are capable of going 23 miles per gallon in 1980 and 2006. The main difference though is that in 1980 23 miles per gallon has been on the top half of fuel economy, while in 2006 23 miles per gallon is on the bottom half of fuel economy. 
 In total we can say, that fuel economy has increased from 1980 to 2006.  
 
 Now please try to plot the density of `accel` with `ggplot`. It is not needed to do the data preparation as I did in the example.
@@ -447,7 +447,7 @@ Use the same syntax as in the example above and save your object as `p2`. Don't 
 ```
 
 Let's take a look at the acceleration density. 
-It is of course obvious that cars got faster over the years. Most of the cars in 1980 took around 13 seconds from 0-80 mph, whereas in 2006 the peak (which means that most of the cars take this time from 0-80 mph) is roughly 8 seconds. Another very interesting observation might be, that one of the slower cars (accel > 12 sec) in 2006 accelerates a little bit faster as the average car in 1980. 
+It is of course obvious that cars got faster over the years. Most of the cars in 1980 took around 13 seconds from 0-80 mph, whereas in 2006 the peak (which means that most of the cars take this time from 0-80 mph) is roughly 8 seconds. Another very interesting observation might be that one of the slower cars (accel > 12 sec) in 2006 accelerates a little bit faster as the average car in 1980. 
 
 
 ### b) Scatter Plots
@@ -486,7 +486,7 @@ Your task now is, to create a scatter plot called `p4` for horsepower `hp` and f
 
 Good job on that Scatter plot. 
 
-It is very interesting that in 1980 a car with more than 200 horsepowers has been almost a rarity. Most of the cars had between 80 and 180 horsepowers. In 2006, 200 horsepowers can almost be considered as a standard amount of horsepower for a new car.   
+It is very interesting that in 1980 a car with more than 200 horsepower has been almost a rarity. Most of the cars had between 80 and 180 horsepower. In 2006, 200 horsepower can almost be considered as a standard amount of horsepower for a new car.   
 Our scatter plot here suggests that a car with a fuel economy of 20 miles per gallon was able to have 280 more horsepower in 2006 than in 1980. On the other side, a car with 200 horsepower gets roughly 15 more miles per gallon in 2006 than in 1980. 
 
 ### c) Google Vision Plot
@@ -526,9 +526,9 @@ If we now take a look at this motion chart, we can see the six different cars ea
 * The bigger the circle is, the heavier is the car. 
 * Torque is represented with colors. See the legend for clarification. 
 
-We can see, that the point representing the Corvette is the one with the lowest miles per gallon over the course of the sample. But it also is the car with the highest horsepower, fastest acceleration (you can display acceleration by changing one of the values, for example mpg to accel), highest weight and highest torque.
+We can see that the point representing the Corvette is the one with the lowest miles per gallon over the course of the sample. But it also is the car with the highest horsepower, fastest acceleration (you can display acceleration by changing one of the values, for example mpg to accel), highest weight and highest torque.
 In contrast to this, the cars with the highest miles per gallon values, the Honda Civic, has the lowest values for horsepower, torque, curb weight and the slowest acceleration. 
-Therefore we could assume, that there might be a realtionship between these values and fuel economy. We will take a look at this in later exercises. 
+Therefore we could assume that there might be a relationship between these values and fuel economy. We will take a look at this in later exercises. 
 
 
 *This exercise refers to page 3378 and 3379 of the paper.*
@@ -570,7 +570,7 @@ $$ c_{it} = C(mpg_{it},w_{it},hp_{it},tq_{it},X_{it},Z_{it}, t) $$
 
 Attributes stored in $X_{it}$ might be a supercharger, a turbocharger or the kind of transmission used in the car.
 
-Attributes stored in $Z_{it}$ are not related to fuel economy. These could be interior quality, a sun roof, a navigation system, a tow-bar and so on.. 
+Attributes stored in $Z_{it}$ are not related to fuel economy. These could be interior quality, a sun roof, a navigation system, a tow-bar and so on. 
 
 If we would like to estimate the Technological Progress in our current model, we can try to estimate how this function has changed over time. But there are two major problems: 
 
@@ -583,7 +583,7 @@ As a result, we will instead focus on the iso-cost curves (level sets) of the fu
 
 
 Now, we would like to get a more precise model than this. 
-One of the problems is, that we can not control the size of $Z_{it}$. 
+One of the problems is that we cannot control the size of $Z_{it}$. 
 If we now assume, that the attributes unrelated to fuel economy $Z_{it}$ are additively separable, this results that our function  
 
 $$ c_{it} = C(mpg_{it},w_{it},hp_{it},tq_{it},X_{it},Z_{it}, t) $$ 
@@ -596,11 +596,11 @@ This allows us, to have two separate components of our marginal cost function:
 
 $C^{1}$ which contains all the fuel economy related attributes
 
-$C^{2}$ contains the components of the function that are not related to fuel economy. 
+$C^{2}$ which contains the components of the function that are not related to fuel economy. 
 
 Because we are interested in how fuel economy has changed and $C^{2}$ does not contain any components related to fuel economy, we can ignore the $C^{2}$ part from here on.
 
-Since we want to focus on the level sets of our function, we should transform our function into a such. 
+Since we want to focus on the level sets of our function, we should transform our function into such. 
 This yields to:
 
 $$ mpg_{it} = f(w_{it},hp_{it},tq_{it},X_{it},t |  C^{1} = \sigma) $$
@@ -633,11 +633,11 @@ Let's start with the empirical work in the next exercise.
 
 ## Exercise 5.1: Empirical Model: Cobb-Douglas
 
-In this part of the Problem Set, we will focus on a Cobb-Douglas functional forms to estimate the level sets. 
+In this part of the Problem Set, we will focus on a Cobb-Douglas functional form to estimate the level sets. 
 
 ### a) Introducing Model 
 
-Before we are going to work with the more complicated models in the paper, it makes sense to took at an easier model first.
+Before we are going to work with the more complicated models in the paper, it makes sense to look at an easier model first.
 
 We assume there is a cost function representing the costs of producing a car with a given amount of fuel economy `mpg`, horsepower `hp` and torque `torque`. I know it is a very simple representation of a car, but the reason is to get an idea of how later models work. 
 In 1928 Charles Cobb and Paul Douglas published their [paper](https://www.aeaweb.org/aer/top20/18.1.139-165.pdf) " A Theory of Production" in which they established a framework that has been widely accepted in empirical investigations. 
@@ -649,7 +649,7 @@ The formula then looks like this:
 
 $$\tilde c_{it} = mpg_{it}{}^\tilde\alpha * hp_{it}{}^\tilde\beta * torque_{it}{}^\tilde\gamma * \tilde T_t $$
 
-info("Techonoligcal Progress T") # Run this line (Strg-Enter) to show info
+info("Technoligcal Progress T") # Run this line (Strg-Enter) to show info
 
 The problem with this formula is, that we don't have any data for costs nor price. 
 
@@ -668,7 +668,7 @@ Now we multiply it with (-1):
 
 $$ \tilde\alpha * \ln mpg_{it} = - \ln \tilde T_t - \tilde\beta * \ln hp_{it} - \tilde\gamma * \ln torque_{it} + \ln \tilde c_{it}$$
 
-Since we want to express fuel economy we want it to be separated. We simply divide trough $\alpha$ : 
+Since we want to express fuel economy we want it to be separated. We simply divide through $\alpha$ : 
 
 $$ \ln mpg_{it} = - \frac{\ln \tilde T_t}{\tilde\alpha} - \frac{\tilde\beta}{\tilde\alpha} * \ln hp_{it} - \frac{\tilde\gamma}{\tilde\alpha} * \ln torque_{it} + \frac{\ln \tilde c_{it}}{\tilde\alpha}$$
 
@@ -694,7 +694,7 @@ info("Logarithmic Transformation") # Run this line (Strg-Enter) to show info
 
 **For exercise 5.1, we will not take a look at Technological progress $T_t$. It will be discussed in Exercise 5.2**
 
-### b) loading Data 
+### b) Loading Data 
 
 For the next few exercises, we need a special subset of our data: 
 We will use the `filter()`command on `dat` and select all data sets with following characteristics:
@@ -716,7 +716,7 @@ regdata = filter(dat, d_truck==0 & outlier==0)
 With `d_truck==0` we can assure that only data from cars are used and `outlier==0` makes sure that outliers are not used in our regressions. 
 
 ### c) Model 1
-After getting an overview of the data in earlier exercises and getting an idea on how the models work in exercise a), we will now use the knowledge in order to impove the introducing model. 
+After getting an overview of the data in earlier exercises and getting an idea on how the models work in exercise a), we will now use the knowledge in order to improve the introducing model. 
 
 Let's take our easy model, and assume a "more complicated" car. Our car still contains of fuel economy ($mpg_{it}$), horsepower ($hp_{it}$) and torque ($tq_{it}$), but let's add curb weight ($curbwt_{it}$). Since there are still very few car attributes represented (missing ones might be transmission, exhaust system,...) we should take more into account. 
 To keep it simple, we add a term $X_{it}$ in which we store other attributes related to fuel economy. 
@@ -731,7 +731,7 @@ After transforming the same way as our example, this yields:
 Model 1: $$ \ln mpg_{it} = T_t + \delta  \ln curbwt_{it} +\beta  \ln hp_{it} + \gamma  \ln tq_{it} + X_{it}B + \tilde \epsilon_{it} $$
 
 We can now try to calculate values for the given variables using a regression: 
-In our data, we have existing groups (`mfr`) in which the values might be correlated. For example may cars from the same manufacturer  share parts or technology (both is possible as well) and therefore the values might be correlated within the groups.
+In our data, we have existing groups (`mfr`) in which the values might be correlated. For example may cars from the same manufacturer  share parts or technology (a combination is possible as well) and therefore the values might be correlated within the groups.
 This would result in the fact that regular OLS standard errors are biased.
 We can correct this, by using clustered standard errors. 
 If we still assume that the values are uncorrelated across groups, we are able to use clustered standard errors. For more information, see the into box.
@@ -772,7 +772,7 @@ The same interpretation is given for horsepower:  All else equal, a 10 percent i
 For torque the relationship is not precisely estimated, which we are able to tell by the Signif. codes, but a 10 percent increase in `torque` is associated with a 0.19 percent decrease in `fuel economy`. 
 
 info("interpretation log-log regression") # Run this line (Strg-Enter) to show info
-### d) Endogenity
+### d) Endogeneity
 A variable is called exogenous if it is **not correlated with the error term**.
 For example if we assume that torque would be an exogenous variable then: 
 
@@ -798,7 +798,7 @@ Source: Herbert Stocker: Methoden der Empirischen Wirtschaftsforschung Chapter 1
 
 ### e) Model 2
 
-As you've seen, we might have endogenity in our model. One way to fix it, is by using Panel data (see the *info* box) and adding fixed effects (see the *info* box). If we now think that cars have changed over time, but are constant across manufacturers we now have to add fixed manufacturer effects to Model 1.
+As you've seen, we might have endogeneity in our model. One way to fix it, is by using Panel data (see the *info* box) and adding fixed effects (see the *info* box). If we now think that cars have changed over time, but are constant across manufacturers we now have to add fixed manufacturer effects to Model 1.
 
 info("Panel data") # Run this line (Strg-Enter) to show info
 
@@ -817,7 +817,7 @@ By adding manufacturer fixed effects, we eliminate the manufacturer specific com
 
 $$\epsilon_{it} = k_{it}$$ 
 
-By doing so, we try to reduce/eliminate endogenity. 
+By doing so, we try to reduce/eliminate endogeneity. 
 
 With 'felm' these fixed effects are relatively easy to implement. We simply add `mfr` to our factor part of the command. 
 
@@ -875,7 +875,7 @@ As you might have already noticed, we didn't touch on the $T_t$ of our formula y
 $T_t$ is the estimator for Technological progress. It should capture the progress that occurred in a certain year $t$ and is, in our models, modeled nonparametrically as a **set of year fixed effects**. 
 
 Technological progress does not only represent increases in engine technology, but also improvements regarding for example  transmissions, rolling resistance, aerodynamics or even fuel composition. 
-As you might see, some of these effects can not be influenced by manufacturers or customers.
+As you might see, some of these effects cannot be influenced by manufacturers or customers.
 Beginning in the 1980 numerous technologies have been established in newly produced cars. Some of these progresses on the engine side have been for example replacing carburetors with fuel injection, or adding manual cylinder deactivation. Both lead to great improvements in fuel economy. 
 If we compare a modern engine with an engine from around 1980 a modern engine has a camshaft, which is responsible for lifting the valves during its rotation and is placed above the engine head eliminating friction. Many new cars have multiple valves per cylinder as well as variable valve timing. While multiple valves allow a smoother flow of the fuel/air mixture within the engine, variable valve timing allows the engine to adjust to driving conditions. 
 Both a supercharger and a turbocharger use a turbine to force more air into the engine, resulting in an increase in efficiency.
@@ -920,19 +920,19 @@ stargazer(reg1t, type = "html")
 
 As you can see, we now have a value for every year. This value represents the level of technology in this given year based on year 1980.
 Because we already have the values for $curb weight$ , $horsepower$ , $torque$ and $X_{it}$, and they didn't change, we are for now only interested in the values of technology.
-In order to only have the values we need, we wil extract them from the results. For this task the `tidy()` command from the package broom helps us to make this task more convenient.
+In order to only have the values we need, we will extract them from the results. For this task the `tidy()` command from the package broom helps us to make this task more convenient.
 
 info("tidy()") # Run this line (Strg-Enter) to show info
 I did this already for you. Just click the check button. 
 
-If you want to see what is stored in `TECH_PROG_MOD1`, you have to simply uncommend the last line in this command.
+If you want to see what is stored in `TECH_PROG_MOD1`, you have to simply undomment the last line in this command.
 
 ```{r "5_2__Cobb_Douglas__Technological_Progress__3"}
 # We use the `tidy` command from the "broom" package to create a nicer looking appearance.  
 library(broom)
 M1t <- tidy(reg1t)
 
-# lastly, we need to extract the data regarding year from our dataframe "M1t"
+# lastly, we need to extract the data regarding year from our data frame "M1t"
 TECH_PROG_MOD1 = M1t[10:35, c('term', 'estimate')]
 
 # in case you want to see how this looks like, just uncomment the next line
@@ -968,7 +968,7 @@ After we now have the values for each year in both models, we only have to extra
 
 I have already prepared the needed code for you, so simply click check once more. 
 
-If you would like to see how `TECH_PROG_MOD2` looks, just umcommend the last line of code.
+If you would like to see how `TECH_PROG_MOD2` looks, just uncomment the last line of code.
 
 ```{r "5_2__Cobb_Douglas__Technological_Progress__6"}
 # Use tidy to create M2t from reg2t
@@ -985,9 +985,9 @@ Good Job on that regression. We are now able create a plot of the two estimates 
 
 Let's set these two estimates into relation:
 
-In oder to plot both of the results, we will first create a data frame containing the values of `TECH_PROG_MOD1` and `TECH_PROG_MOD2`.
+In order to plot both of the results, we will first create a data frame containing the values of `TECH_PROG_MOD1` and `TECH_PROG_MOD2`.
 
-As in previous exercises, if you would like to see how `p12` looks, just umcommend the last line of code.
+As in previous exercises, if you would like to see how `p12` looks, just uncomment the last line of code.
 
 ```{r "5_2__Cobb_Douglas__Technological_Progress__7"}
 # first we create a vector containing the years
@@ -997,7 +997,7 @@ Year = 1981:2006
 Model1 = TECH_PROG_MOD1$estimate
 Model2 = TECH_PROG_MOD2$estimate
 # now we have 3 vectors, one for the years, and one for each models technological progress estimates
-# we now only have to save them into a dataframe. 
+# we now only have to save them into a data frame. 
 # cbind takes a sequence of vector, matrix or data frames arguments and combine by columns
 # in our case the three vectors 
 # to be able to plot them, we need to transform them into a data.frame with data.frame()
@@ -1047,12 +1047,13 @@ $$ G = T_t - T_0 \overset{T_0 = 0}{=} T_t$$
 Therefore we can say that, for Model 1, the log of fuel economy is over `0.52174952` greater in 2006, compared to 1980. 
 A similar interpretation for Model 2 is that the log of fuel economy is over `0.51150664` greater in 2006, compared to 1980. 
 
-We will now estimate, how the fuel economy of a car with characteristics of 1980 would look like in 2006 regarding **Model 1**. 
+We will now estimate how the fuel economy of a car with characteristics of 1980 would look like in 2006 regarding **Model 1**. 
 
 To do so we will calculate the possible fuel economy in 2006, using the characteristics of 1980.
 The idea is, that if we keep all the values except for $T_t$ on their 1980 levels, we can use our estimates for $T_t$ to calculate the log of fuel economy in each year $t$.
 
-Let's assume, a fictive car with the mean values for our attributes in 1980:
+Let's assume a fictive car with the mean values for our attributes in 1980:
+We therefore have to save the mean values of our attributes in the year 1980 into a vector.
 
 ```{r "5_2__Cobb_Douglas__Technological_Progress__9"}
 # to get these values, we need to take all the cars from 1980: 
@@ -1061,7 +1062,7 @@ cars1980 = filter(dat, d_truck == 0, outlier == 0, year == 1980)
 
 
 # since you already know how to calculate means from Exercise 1, 
-# we this time will save all the means in a vector calles means1980.
+# we this time will save all the means in a vector called means1980.
 # it contains the mean values for the relevant attributes we used in the regression. 
 
 means1980 = c(mean(cars1980$lcurbwt),
@@ -1081,15 +1082,16 @@ These are the coefficients we got from our first regression.
 
 ```{r "5_2__Cobb_Douglas__Technological_Progress__10"}
 # since we want to have the coefficients of our regression, we can use the command `coef()` to get them.
-# This command saves the coefficients into a dataframe called datreg1
+# This command saves the coefficients into a data frame called datreg1
 datreg1 = data.frame(coef(reg1t))
 show(datreg1)
 ```
 
-since we by now only have all the values, we would like to filter out the ones we need.
+Since we by now only have all the values, we would like to filter out the ones we need.
 We need the values of $\delta$, $\beta$, $\gamma$ and $B$, as well as the values for $T_{2006}$ and the constant:
 
 ```{r "5_2__Cobb_Douglas__Technological_Progress__11"}
+# We can retrieve values by declaring the index inside a single square bracket "[row,column]" operator.
 # get the constant
 const = datreg1[1,1]
 const
@@ -1113,11 +1115,11 @@ To calculate the mean fuel economy in 1980 with our model, we need to multiply o
 # one contains the coefficients, the other the mean values of 1980.
 reglmpg1980 = 0 + sum(coef*means1980) + const
 reglmpg1980
-# this command provides us with the real value.
+# this command provides us the real value from our data.
 mean(cars1980$lmpg)
 ```
 
-So the value we get from our regression is `3.106287`, which is equal to the mean values of this year. We can see that the results of our models are equal to the real value, therefore our calculation appers to be correct.  
+So the value we get from our regression is `3.106287`, which is equal to the mean values of this year. We can see that the results of our models are equal to the real value, therefore our calculation appears to be correct.  
 
 If we now want to estimate how the same fictive car would ceteris paribus look like in year 2006, we have to use the estimated $T_{2006}$ instead of $T_0$
 
@@ -1145,7 +1147,7 @@ Now, that we have a value for fuel economy in 2006, we can compare $\widetilde {
 
 
 ```{r "5_2__Cobb_Douglas__Technological_Progress__14"}
-# exp(tildempg2006) provides us with the value of possilbe fuel economy in 2006, therefore eliminating the log.
+# exp(tildempg2006) provides us with the value of possible fuel economy in 2006, by eliminating the log.
 # then we just calculate the percentage increase compared to 1980.
 progressm1 = (exp(tildelmpg2006)-mean(cars1980$mpg))/mean(cars1980$mpg)
 progressm1
@@ -1163,7 +1165,7 @@ The increase for model 2 will be discussed in exercise 6.3.
 After we have managed to get an idea of $T_t$, one might be concerned that a supercharger or a turbocharger are some kind of "technological progress". If this is the case, they should not be considered in our regression, because they will already be represented in $T_t$.
 So let's take a look at this.  
 
-### a) loading data
+### a) Loading data
 
 As usual, we load our data.
 ```{r "6_1__Robustness__Cobb_Douglas_"}
@@ -1191,8 +1193,7 @@ pen1 = ggplot(aes(x=year, y=d_super), data = pen) + geom_line() +ggtitle("Superc
 pen1
 ```
 
-We can see that the market penetration of superchargers started in 1988. Since then it has increased with a small decrease in 1996. In the years after 1996, we can see that more and more care have been equipped with a supercharger.  
-
+We can see that the market penetration of superchargers started in 1988. Since then it has increased with a small decrease in 1996. In the years after 1996, we can see that more and more cars have been equipped with a supercharger.  
 
 Now it is your turn. Do the equivalent plot for turbocharger.
 
@@ -1203,15 +1204,15 @@ Now it is your turn. Do the equivalent plot for turbocharger.
 # then display the plot
 ```
 
-What we can see here is, that the market penetration of new cars regarding turbochargers has increased drastically early in the sample. After a big downfall between 1989 and 1996, the amount of new cars equipped with a turbocharger inceased drastically again. 
+What we can see here is, that the market penetration of new cars regarding turbochargers has increased drastically early in the sample. After a big downfall between 1989 and 1996, the amount of new cars equipped with a turbocharger increased drastically again. 
 
-Now, regarding both market penetrations, we can say that more and more care are equipped with a supercharger or turbocharger, especially in the later years of our sample. 
+Now, regarding both market penetrations, we can say that more and more cars are equipped with a supercharger or turbocharger, especially in the later years of our sample. 
 
 #! addon__quiz__m3
 
   
 
-If we don't take `d_super`and `d_turbo` into account, we allow our estimates of technological progress to reflect their increased penetration, as well as their effect on fuel economy. 
+If we don't take `d_super` and `d_turbo` into account, we allow our estimates of technological progress to reflect their increased penetration, as well as their effect on fuel economy. 
 
 This transforms our iso-cost curve to:
 
@@ -1242,7 +1243,7 @@ For the discussion of this models Technological Progress, see Exercise 6.3.
 
 The assumptions made by the Cobb-Douglas model, are very restrictive. Therefore we will use a more flexible model in this exercise: the Translog production function. 
 
-A general translog function can look like this: 
+A general Translog function can look like this: 
 
 $$ \ln y = \alpha_0 + \sum_{i} \alpha_i + \ln X_i + \dfrac{1}{2} \sum_{i} \sum_{j} \gamma_{ij} \ln X_i \ln X_j$$
 
@@ -1250,7 +1251,7 @@ info("Translog") # Run this line (Strg-Enter) to show info
 
 The advantage a translog function has over a Cobb-Douglas Model is the flexible functional form. 
 This results in less restrictions on production elasticity and substitution elasticizes. 
-But the disadvantages are, that our results are more difficult to interpret. Therefore we will not interpret them as detailed as we did for the first three models.
+But the disadvantages are that our results are more difficult to interpret. Therefore we will not interpret them as detailed as we did for the first three models.
 
 A translog function is a generalization the Cobb-Douglas production function and therefore we can use the same way of transforming the cost function into level sets as we did in Exercise 5.1 a).
 
@@ -1263,7 +1264,7 @@ $$ \ln mpg_{it} = T_t + \beta_1 \ln curbwt_{it} +\beta_2 \ln hp_{it} + \beta_3 \
 \gamma_1(\ln curbwt_{it})^2 +\gamma_2(\ln hp_{it})^2 + \gamma_3(\ln tq_{it})^2 +\\\\
 \delta_1\ln curbwt_{it}\ln hp_{it} + \delta_2\ln curbwt_{it}\ln tq_{it} + \delta_3\ln hp_{it}\ln tq_{it} + X_{it}B + \epsilon_{it} $$
 
-### a) loading Data 
+### a) Loading Data 
 
 we load the same data as for Cobb-Douglas. 
 Simply click check:
@@ -1280,7 +1281,7 @@ For the first translog model we will take the same assumptions we made for the f
 #! addon__quiz__t1
 
 
-Since you now know again which characteristics are part of the Cobb-Douglas model, this is how the level sets of our translog model looks like:
+Since you now know again which characteristics are part of our Cobb-Douglas models, this is how the level sets of our translog model looks like:
 
 $$ \ln mpg_{it} = T_t + \beta_1 \ln curbwt_{it} +\beta_2 \ln hp_{it} + \beta_3 \ln tq_{it} +\\\\
 \gamma_1(\ln curbwt_{it})^2 +\gamma_2(\ln hp_{it})^2 + \gamma_3(\ln tq_{it})^2 +\\\\
@@ -1316,7 +1317,7 @@ stargazer(reg4, type="html")
 
 If we now take a look at the results, one of the first things to realize might be, that all the Standard Errors for `lcurbwt`, `lhp` and `ltorque` are way bigger than for the Cobb-Douglas Model. 
 
-Since there might be the same problem with endogenity as in our Cobb-Douglas Model, let's see what happens if we add manufacturer fixed effects to our translog model. 
+Since there might be the same problem with endogeneity as in our Cobb-Douglas Model, let's see what happens if we add manufacturer fixed effects to our translog model. 
 
 ### c) Model 5
 In this exercise we will add manufacturer fixed effects to our recently developed translog model. 
@@ -1386,7 +1387,7 @@ stargazer(reg4, reg5, reg6, column.labels=c("OLS","Fixed Effects","Fixed Effects
 
 After we now have all our results for the regression, we can see that the standard errors of all models are bigger than for Cobb-Douglas.
 
-It appears that the Translog assumption is overparameterize the iso-cost curve. 
+It appears that the Translog assumption does overparameterize the iso-cost curve. 
 
 The coefficients associated with manual transmissions and diesel engines suggest fuel economy savings for these two attributes.
 For our Translog Models, the increase in fuel efficiency from diesel technology is between 24 and 27 percent. 
@@ -1398,7 +1399,7 @@ Since the efficiency gains of automatic transmissions, in relation to manual tra
 
 ## Exercise 6.3: Robustness: Technological Progress
 
-Since are not only interested in Trade offs between the different attributes, but also in how technology has changed over the course of our data, we are now trying to estimate a value for this progress every year in each of our Models.
+Since are not only interested in trade-offs between the different attributes, but also in how technology has changed over the course of our data, we are now using estimates for technological progress across all our models.
 
 Because we will later need the values of cars in 1980, I already prepared the needed data for you. Simply click check. 
 
@@ -1443,7 +1444,7 @@ If we take a closer look at the graph, we can see that early in the sample (year
 Another reason beside the CAFE standards might be, that early in the sample the gasoline prices were high, and therefore the industry had to come up with ideas to increase fuel economy in order to sell their cars.
 After these years the technological progress is still increasing considerably, but the increase has obviously slowed down.
 All results for the Cobb-Douglas Models (1-3) are significant on the one percent level. The same applies to out Translog Models (4-6).
-It is interesting that even tough these results are very similar, we can still see a small differences between the different models.
+It is interesting that even though these results are very similar, we can still see small differences between the different models.
 Our Cobb-Douglas models yield slightly higher estimates of progress over the year than the Translog models. This might come from the functional part of the translog function. All of the models imply that, conditional on weight and power characteristics, the log of fuel economy is at least over 0.485 greater in 2006, compared to 1980.
 
 Since $T_t$ is the absolute increase of $lmpg$ in year $t$, we can estimate the percentage increase in every model pretty easy.
@@ -1457,8 +1458,8 @@ T2006 = progress16[26,2:7]
 T2006
 ```
 
-Because this is the absolut increase, we can add it to the mean values of `lmpg` in year 1980.
-Afterwards we will calculate the absloute incrase in `lmpg` for every model. 
+Because this is the absolute increase, we can add it to the mean values of `lmpg` in year 1980.
+Afterwards we will calculate the absolute increase in `lmpg` for every model. 
 Your task is to now add the mean values of lmpg from `cars1980` to our recently created `T2006`. 
 
 ```{r "6_3__Robustness__Technological_Progress__6"}
@@ -1476,8 +1477,8 @@ percentincrease = (exp(lmpgtilde) - mean(cars1980$mpg)) / mean(cars1980$mpg)
 percentincrease
 ```
 
-If we now take a look at our percentage increases, we can see the same similar differences between the models as before (which is logical of course). The Cobb-Douglas models yield slightly higher increases than the translog models. This results from the already greater values for $T_{2006}$ in those models. Overall we can say that , conditional on weight and power characteristics, the log of fuel economy is over 0.485 greater in 2006, compared to 1980. At the mean fuel economy in 1980, our models impy a 58 percent increase in fuel economy could have been possible. 
-This, in contrast to the 18 percent "real incrase" we concluded in exercise 1, is a pretty big difference.
+If we now take a look at our percentage increases, we can see similar differences between the models as before (which is logical of course). The Cobb-Douglas models yield slightly higher increases than the translog models. This results from the already greater values for $T_{2006}$ in those models. Overall we can say that , conditional on weight and power characteristics, the log of fuel economy is over 0.485 greater in 2006, compared to 1980. At the mean fuel economy in 1980, our models imply a 58 percent increase in fuel economy could have been possible. 
+This, in contrast to the 18 percent "real increase" we concluded in exercise 1, is a pretty big difference.
 
 
 
@@ -1487,14 +1488,14 @@ This, in contrast to the 18 percent "real incrase" we concluded in exercise 1, i
 
 Before we are coming to a conclusion for this problem set, let's see what you have been awarded for in this problem set.
 
-To see which awards you archieved during this problem set, click check for one last time.
+To see which awards you achieved during this problem set, click check for one last time.
 In case you got all the awards, there should be 10 awards shown. 
 ```{r "7__Conclusion_"}
 awards(as.html=TRUE)
 ```
 
 
-As a conclusion, we can say that, after analysing the data we are not only able to estimate the trade-offs that consumers and manufacturers face when choosing between fuel economy, vehicle size, and vehicle power.
+As a conclusion, we can say that, after analyzing the data we are not only able to estimate the trade-offs that consumers and manufacturers face when choosing between fuel economy, vehicle size, and vehicle power.
 The estimated trade-off between weight and fuel economy suggests that, fuel economy increases by over 4 percent for every 10 percent reduction in weight. On average, fuel economy increases by 2.7 percent for every 10 percent reduction in horsepower. Sadly, the effect of torque is less precisely estimated. 
 We are also able to estimate the technological advances that have occurred over these dimensions from 1980 to 2006. Our results imply that had we kept vehicle size and power at their 1980 levels, fuel economy would have been nearly 60 percent higher in 2006 compared to the 1980 level. 
 
@@ -1511,7 +1512,7 @@ So what could be a solution?
 One way of keeping incentive for manufacturers to increase fuel economy would be to convince customers that fuel economy is a very important characteristic when purchasing a new car. If consumers value fuel economy over other characteristics such as for example horsepower, manufactures will have to value fuel economy stronger.
 CAFE standards are (as we have seen) a good way for policy to ensure a minimum of fuel economy requirements for vehicles, but if the standards are too strict while customers want other characteristics, more and more manufacturers will just pay the fine in order to sell their cars.
 
-We also have to note, that all of our results are based on an approach from an economics perspective. As a result we regard the functional relationships within a car or an engine as a "black-box". Approaching this question from an engineers perspective, we should probably take other models into consideration. 
+We also have to note, that all of our results are based on an approach from an economics perspective. As a result we regard the functional relationships within a car or an engine as a "black-box". Approaching this question from an engineer's perspective, we should probably take other models into consideration. 
 
 
 
@@ -1519,72 +1520,70 @@ We also have to note, that all of our results are based on an approach from an e
 
 **Bibliography**
 
-* Knittel, Christopher R. 2011. "Automobiles on Steroids: Product Attribute Trade-Offs and Technological Progress in the Automobile Sector." American Economic Review, 101(7): 3368-99. DOI: 10.1257/aer.101.7.3368
-
-* Wooldridge, Jeffrey M. (2013). Introductory Econometrics: A Modern Approach (Fifth international ed.). Australia: South-Western. ISBN:978-1-111-53104-1 pages p. 44, 92, 303 and 852
-
-* Hogg, R. V. and Craig, A. T. Introduction to Mathematical Statistics, 5th ed. New York: Macmillan, 1995. ISBN:
-0-02-978990-7
-
-* Kennedy Peter (2008), A Guide to Econometrics, 6th edition. Blackwell Publishing. ISBN 978-1-4051-8258-4. pages 111, 232, 292 - 293
-
-* Ligges, U. (2008): Programmieren mit R. 3. Auflage, Berlin Heidelberg: Springer-Verlag. ISBN 978-3-540-79998-6
-
-* Stock, J. H., Watson, M. W. (2007): Introduction to Econometrics. Second Edition, Boston: Pearson Education Inc. ISBN: 978-0-321-27887-6 pages 13, 21, 27, 68, 93, 350-351, 356
-
-* Wickham, Hadley. (2009). "ggplot2: Elegant Graphics for Data Analysis". Springer. ISBN: 978-0-387-98140-6
+*	Cobb, Charles W., Douglas Paul H. (1928): A Theory of Production, American Econom-ic Review
 
 * Hackl, P. (2008): "Einführung in die Ökonometrie 2. aktualisierte Auflage". Pearson. ISBN: 978-3-827-37338-0
 
-* U.S. DEPARTMENT OF TRANSPORTATION (2014): SUMMARY OF FUEL ECONOMY PERFORMANCE. Internet: [link](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwjYwcqkmbPJAhXBkXIKHdhNBmoQFggeMAA&url=http%3A%2F%2Fwww.nhtsa.gov%2Fstaticfiles%2Frulemaking%2Fpdf%2Fcafe%2FJune_2014_Summary_Report.pdf&usg=AFQjCNHORoxLn4Mw1wFlaNcb4wq62IRL_Q&cad=rja) 28.11.15
+*	Hogg, R. V. and Craig, A. T. (1995): Introduction to Mathematical Statistics, 5th ed. New York: Macmillan. ISBN: 0-02-978990-7
 
-* Yacobucci, Bamberger (2008): Automobile and Light Truck Fuel Economy: The CAFE Standards. page CRS-3 Internet: [link](http://www.hsdl.org/?view&did=716410) 28.11.15
+*	Kennedy, Peter (2008): A Guide to Econometrics, 6th edition. Blackwell Publishing. ISBN 978-1-4051-8258-4. pages 111, 232, 292 - 293
 
-* Charles W. Cobb, Paul H. Douglas (1928): A Theory of Production, [link](https://www.aeaweb.org/aer/top20/18.1.139-165.pdf)
+*	Knittel, Christopher R. 2011. "Automobiles on Steroids: Product Attribute Trade-Offs and Technological Progress in the Automobile Sector." American Economic Review, 101(7): 3368-99. DOI: 10.1257/aer.101.7.3368
 
-* Herbert Stocker: Methoden der Empirischen Wirtschaftsforschung Chapter 13. ISBN:978-3-868-94085-5 [link](http://www.uibk.ac.at/econometrics/einf/kap11.pdf)
+*	Ligges, U. (2008): Programmieren mit R. 3rd edition, Berlin Heidelberg: Springer-Verlag. ISBN 978-3-540-79998-6
 
-* Florin - Marius PAVELESCU (2011): Some aspects of the translog production function estimation,  [link](http://revecon.ro/articles/2011-1/2011-1-8.pdf)
+*	Pavelescu, Florin-Marius (2011): Some aspects of the translog production function es-timation, Romanian Journal of Economics.- Institutul de Economie Nationala
+
+* Serway, R. A. and Jewett, Jr. J. W. (2003). Physics for Scientists and Engineers. page 232, 300
+
+*	Stock, J. H., Watson, M. W. (2007): Introduction to Econometrics. Second Edition, Bos-ton: Pearson Education Inc. ISBN: 978-0-321-27887-6 pages 13, 21, 27, 68, 93, 350-351, 356
+
+* Stocker, Herbert (2014): Methoden der Empirischen Wirtschaftsforschung. Pearson Studium. ISBN:978-3-868-94085-5 Chapter 13
+
+*	U.S. Department of Transportation (2014): Summary of fuel economy performance (Public version), Internet: [link](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwjYwcqkmbPJAhXBkXIKHdhNBmoQFggeMAA&url=http%3A%2F%2Fwww.nhtsa.gov%2Fstaticfiles%2Frulemaking%2Fpdf%2Fcafe%2FJune_2014_Summary_Report.pdf&usg=AFQjCNHORoxLn4Mw1wFlaNcb4wq62IRL_Q&cad=rja) 28.11.15
+
+*	Wickham, Hadley. (2009). "ggplot2: Elegant Graphics for Data Analysis". Springer. ISBN: 978-0-387-98140-6
+
+*	Wooldridge, Jeffrey M. (2013): Introductory Econometrics: A Modern Approach (Fifth international ed.). Australia: South-Western. ISBN:978-1-111-53104-1 pages 44, 92, 303 and 852
+
+*	Yacobucci, Bamberger (2008): Automobile and Light Truck Fuel Economy: The CAFE Standards. Congressional Research Servics, page CRS-3 
 
 
 **R and packages in R** 
 
-* Kranz, S. (2015): RTutor. Creating R problem sets with automatic assement of student's solutions, R package version 2015.11.17  [https://github.com/skranz/RTutor](https://github.com/skranz/RTutor)
+*	Gaure, S. (2015): lfe. Linear Group Fixed Effects, R package version 2.4-1788 [http://cran.r-project.org/web/packages/lfe/index.html](http://cran.r-project.org/web/packages/lfe/index.html)
 
-* Hlavac, Marek (2015). stargazer: Well-Formatted Regression and Summary Statistics Tables.
- R package version 5.2. [http://CRAN.R-project.org/package=stargazer](http://CRAN.R-project.org/package=stargazer) 
- 
+*	Gesmann, Markus & Diego de Castillo. (2011). googleVis: Using the Google Visualisation API with R. The R Journal, 3(2):40-44, December 2011.[link](https://journal.r-project.org/archive/2011-2/RJournal_2011-2_Gesmann+de~Castillo.pdf)
+
+*	Gesmann, Markus, de Castillo, Diego, Cheng, Joe (2015) googleVis: R Interface to Google Charts, R package version 0.5.10
+[https://cran.r-project.org/web/packages/googleVis/index.html](https://cran.r-project.org/web/packages/googleVis/index.html)
+
+*	Hlavac, Marek (2015). stargazer: Well-Formatted Regression and Summary Statistics Tables. R package version 5.2. [https://cran.r-project.org/web/packages/googleVis/index.html](https://cran.r-project.org/web/packages/googleVis/index.html)
+
+* Kranz, Sebastian (2015): RTutor. Creating R problem sets with automatic assement of student's solutions, R package version 2015.11.17 [https://github.com/skranz/RTutor](https://github.com/skranz/RTutor)
+
 * R Core Team (2015): foreign. Read Data Stored by Minitab, S, SAS, SPSS, Stata, Systat, Weka, dBase, . R package version 0.8-66 [http://cran.r-project.org/package=foreign](https://cran.r-project.org/web/packages/foreign/index.html)
-
-* Wickham, Hadley, & Romain Francois. (2014). dplyr: A Grammar of Data Manipulation. R package version 0.4.3 [http://CRAN.R-project.org/package=dplyr](https://cran.r-project.org/web/packages/dplyr/index.html)
 
 * R Core Team. (2014). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. [https://www.r-project.org/](https://www.r-project.org/)
 
-* David Robinson, Matthieu Gomez, Boris Demeshev, Dieter Menne, Benjamin Nutter, Hadley Wickham (2015). broom: Convert Statistical Analysis Objects into Tidy Data Frames, R package version 0.3.7
-[https://cran.r-project.org/web/packages/broom/index.html](https://cran.r-project.org/web/packages/broom/index.html)
+*	Robinson, David (2015). broom: Convert Statistical Analysis Objects into Tidy Data Frames. R package version 0.4.0 [https://cran.r-project.org/web/packages/broom/index.html](https://cran.r-project.org/web/packages/broom/index.html)
 
 * Jeremy Stephens (2014). yaml: Methods to convert R data to YAML and back. R package version	2.1.13 [https://cran.r-project.org/web/packages/yaml/index.html](https://cran.r-project.org/web/packages/yaml/index.html)
 
-* Gaure, S. (2015): lfe. Linear Group Fixed Effects, R package version 2.4-1788 [http://cran.r-project.org/web/packages/lfe/index.html](http://cran.r-project.org/web/packages/lfe/index.html)
+* Wickham, Hadley, & Romain Francois. (2014). dplyr: A Grammar of Data Manipulation. R package version 0.4.3 [http://CRAN.R-project.org/package=dplyr](https://cran.r-project.org/web/packages/dplyr/index.html)
 
-* Markus Gesmann, Diego de Castillo, Joe Cheng (2015) googleVis: R Interface to Google Charts, R package version 0.5.10 [https://cran.r-project.org/web/packages/googleVis/index.html](https://cran.r-project.org/web/packages/googleVis/index.html)
-
-* Gesmann, Markus & Diego de Castillo. (2011). googleVis: Using the Google Visualisation API with R. The R Journal, 3(2):40-44, December 2011.[link](https://journal.r-project.org/archive/2011-2/RJournal_2011-2_Gesmann+de~Castillo.pdf)
-
-* David Robinson (2015). broom: Convert Statistical Analysis Objects into Tidy Data Frames. R package version 0.4.0
-[https://cran.r-project.org/web/packages/broom/index.html](https://cran.r-project.org/web/packages/broom/index.html)
 
 **Websites**
 
-* Vigen, Tyler. (2014). Spurious Correlations. http://tylervigen.com/.
+* Sribney,William, StataCorp (1998): Comparison of standard errors for robust, cluster, and standard estimators [link](http://www.stata.com/support/faqs/statistics/standard-errors-and-vce-cluster-option/), 20.11.15
 
-* William Sribney, StataCorp (1998): Comparison of standard errors for robust, cluster, and standard estimators [link](http://www.stata.com/support/faqs/statistics/standard-errors-and-vce-cluster-option/), 20.11.15
+* U.S. Department of Transportation, CAFE - Fuel Economy [link](http://www.nhtsa.gov/fuel-economy), 28.11.15
 
 * U.S. DEPARTMENT OF TRANSPORTATION, Corporate Average Fuel Economy (CAFE) Standards, Updated: Wednesday, August 27, 2014  [link](https://www.transportation.gov/mission/sustainability/corporate-average-fuel-economy-cafe-standards#sthash.OstJpwfC.dpuf), 28.11.15
 
 * Union of Concerned Scientists, Fuel Economy Basics, [link](http://www.ucsusa.org/clean-vehicles/fuel-efficiency/fuel-economy-basics.html#bf-toc-0), 28.11.15
 
-* U.S. Department of Transportation, CAFE - Fuel Economy [link](http://www.nhtsa.gov/fuel-economy), 28.11.15
+* Vigen, Tyler. (2014). Spurious Correlations. http://tylervigen.com/.
 
 **Licence**
 

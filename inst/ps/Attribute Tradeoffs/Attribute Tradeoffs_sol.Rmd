@@ -423,28 +423,28 @@ plot(mp, tag = "chart")
 #>
 ```
 
-In our Motion Chart, each point represents a different manufacturer. 
+In our motion chart, each circle represents a different manufacturer. 
 
 * The bigger the circle is, the more cars are produced this year by the given manufacturer. 
-* The more the point is on the right side of the coordinate system, the more horsepower the average car produced by this manufacturer has. 
-* The higher the point is, the better the fuel economy of the manufacturers' average car in the given year is. 
+* The further a circle is situated at the right side of the coordinate system, the higher the average horsepower of the manufacturer's fleet in the selected year. 
+* The higher a circle is placed in the coordinate system, the better the fuel economy of the manufacturer's average car in the given year.
 
 
-Let's take a look at the motion chart. You can always watch it again by clicking the play button. 
-In the early years of our sample (1980 - 1985), a trend to increase fuel economy can be recognized. Most of the points are moving upwards in the coordinate system and only a few manufacturers are increasing horsepower. If we then take a look at the years after 1985, fuel economy doesn't increase anymore for most manufacturers. In contrast almost all points tend to move further to the right side of the coordinate system, which represents an increase in horsepower.
-What this means is, that maybe there has been an incentive early in the sample to increase fuel economy over other characteristics such as horsepower.
-If we now take a look at the values in 2006, we can see that manufacturers with low fuel economy (<20 mpg), tend to have small points. This means, that they have a small amount of different models in this year. In our case the manufacturers Ferrari, Bentley, Aston Martin and Maserati all have less than 5 models. This is consistent with Yacobucci and Bamberger if they say that most of the CAFE fines have been paid by small European manufacturers. 
+Let us take a closer look at the motion chart above. You can always watch it again by clicking the play button. 
+In the early years of our sample (1980 - 1985) a trend to increase fuel economy can be recognized. Most of the circles are moving upwards in the coordinate system and only a few manufacturers are showing an increase in horsepower. If we then take a look at the years after 1985, there is hardly any increase in fuel economy with most manufacturers. In contrast, almost all circles are moving further to the right side of the coordinate system, which represents an increase in horsepower.
+This could imply the possibility of incentives in the early years in order to lay the manufacturers' focuses on improving their fuel economy as opposed to other characteristics such as for example horsepower. 
+If we now take a look at the values of 2006 we can see that manufacturers with low fuel economy (<20 mpg) tend to have small circles. This suggests a small number of different models in that year. In our case, the manufacturers Ferrari, Bentley, Aston Martin and Mase-rati all have less than 5 models. This is consistent with Yacobucci and Bamberger if they say that most of the CAFE fines were paid by small European manufacturers. 
 
 ### b) Mean fuel economy vs. CAFE Standards
 
-After getting an idea how the manufacturers average non sale weighted fleet looked like over the years, we might now be interested in how CAFE Standards have changed compared to the average fuel economy.
+After getting an idea of how the manufacturers' average non-sale weighted fleet looked like over the years, we might now be interested in how CAFE Standards changed compared to the average fuel economy.
 
-To visualize how the unweighted fuel economy has changed compared to CAFE standards over the years, we can plot both values. 
-The data on CAFE standards was collected from National Highway Traffic Safety Administration. "Summary of Fuel Economy Performance" [link](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwjYwcqkmbPJAhXBkXIKHdhNBmoQFggmMAE&url=http%3A%2F%2Fwww.nhtsa.gov%2Fstaticfiles%2Frulemaking%2Fpdf%2Fcafe%2FOct2012_Summary_Report.pdf&usg=AFQjCNG8qgMJXK0xOYjYu2nDUy67FAM4qg&cad=rja)
+To visualize how the unweighted fuel economy changed compared to CAFE standards over the years, we can plot both values. The data on CAFE standards were taken from the "Summary of Fuel Economy Performance" by the National Highway Traffic Safety Admin-istration [link](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwjYwcqkmbPJAhXBkXIKHdhNBmoQFggmMAE&url=http%3A%2F%2Fwww.nhtsa.gov%2Fstaticfiles%2Frulemaking%2Fpdf%2Fcafe%2FOct2012_Summary_Report.pdf&usg=AFQjCNG8qgMJXK0xOYjYu2nDUy67FAM4qg&cad=rja).
 
-Here we will use the general unweighted mean value for each year, not taking different manufacturers into account, because we would like to get an overall idea on how cars have changed. At this point we are not interested in which manufacturers did not reach the target fuel economy. 
+Here we will use the general unweighted mean value for each year, not taking different manufacturers into account, because we would like to get an overall idea on how all cars have changed. At this point we are not interested in which manufacturers did not reach the target fuel economy. 
 
-I've prepared the data for you already. It contains three columns, year, the mean fuel economy in the given year and the CAFE standard requirements in that year. It is saved as `cafecars.txt`. 
+I have already prepared the data for you. It contains three columns: year, the mean fuel economy in the given year and the CAFE standard requirements in that year.
+It is saved as `cafecars.txt`. 
 To see the plot, please click check. 
 ```{r"cafe1_2"}
 #< task
@@ -460,11 +460,10 @@ cafecars_mpg
 #>
 ```
 
-As we can see, the increase in CAFE Standards for cars was great in the early years, but has not been increased after 1985. In contrast, CAFE Standards have been decreased in 1986, but increased back to the 1985 level in 1990. 
-In relation to this, the average car fuel economy of our sample has been higher than the requirements almost all the time. We have to note here again, that our means are not sales weighted. This might result into corrupted values, because a car that has been sold to a lesser extent is "overrepresented", while cars that have been sold many times are "underrepresented".
-
-Nevertheless, we can estimate a trend. While the standards increased, the fuel economy did increase as well.
-After 1990, the last year CAFE standards were changed, the mean fuel economy has been decreasing almost every year, while even falling below the requirements in 2006. Therefore we might be able to find a correlation between fuel economy and CAFE standards. 
+As we can see, there was an important increase in CAFE Standards for cars in the early years, but after 1985 the standards remained on the same level. 
+In contrast, CAFE Standards decreased in 1986, but rose up back to the 1985 level in 1990. In relation to this, the average car fuel economy of our sample was higher than the requirements most of the time.
+We have to note here again, that our mean values are not sales weighted. This might result into biased values, as a car model with lower sales is "overrepresented", while car models with higher sales are "underrepresented".
+Nevertheless we can estimate a trend. While standards increased, fuel economy was raised as well. After 1990, the year when CAFE standards were modified for the last time in our sample, the mean fuel economy decreased almost every year. In 2006, it even fell below the requirement line. Therefore we might be able to find a correlation between fuel economy and CAFE standards.
 
 Let's have a look at the correlation coefficient. 
 
@@ -474,9 +473,7 @@ cor(cafe$cafe, cafe$mpg)
 #> 
 ```
 
-Our correlation coefficient is `0.8058689` and even though our sample is quiet small, this suggests a strong positive linear relationship. 
-What this indicates is that if we increase CAFE Standards this results in higher average fuel economy.
-This would be one way to explain why there was an increase in fuel economy early, which later changed to increasing other characteristics such as horsepower. 
+Our correlation coefficient is `0.8058689` and even though our sample is quite small, this sug-gests a strong positive linear relationship. This indicates that if we increased the CAFE Standards, this would result in higher average fuel economy. This would be one way to ex-plain why there was an increase in fuel economy early, which later changed to increasing other characteristics such as for example horsepower. 
 
 #< info "cum hoc ergo propter hoc"
 cum hoc ergo propter hoc (lat.) means that correlation does not imply causation. 
@@ -487,16 +484,15 @@ One example for this might be the amount of firefighters in correlation with the
 In case you are interested in more examples of high correlations that clearly don't indicate  causation, you might as well take a look at [Spurious Correlations](http://tylervigen.com/).
 #>
 
-What we know after this exercise is that, implying a causal relationship, an increase in CAFE Standards should result in an increase in fuel economy.
-As long as the CAFE Standards are fulfilled, which equals not having to pay a fee, manufacturers are going to increase those characteristics which are important to the customer. Examples of these characteristics are acceleration or horsepower. 
-Manufacturers, who do not comply with the standards, are valuing the consumer preferences higher than the resulting fine.
-But before we are using this information in order to give any advice, we have to get a better understanding how different car attributes influence fuel economy. This will be the topic in exercise 3. 
+What we know after this exercise is that, implying a causal relationship, an increase in CAFE Standards should result in an increase in fuel economy. As long as the CAFE Standards are fulfilled, which equals to not having to pay a fine, manufacturers will increase characteristics which are important to the customer. Examples of these characteristics are acceleration or horsepower. Manufacturers who do not comply with the standards value the consumer pref-erences higher than the resulting fine. But before we are using this information in order to give advice, we have to get a better understanding of how different car attributes influence fuel economy. 
+
+This will be the topic of exercise 3. 
 
 Source: U.S. Department of Transportation (2014): Corporate Average Fuel Economy (CAFE) Standards [link](https://www.transportation.gov/mission/sustainability/corporate-average-fuel-economy-cafe-standards#sthash.OstJpwfC.dpuf), 28.11.15
 
 Source: U.S. Department of Transportation (2003): CAFE - Fuel Economy [link](http://www.nhtsa.gov/fuel-economy) , 28.11.15
 
-Source: http://www.ucsusa.org/clean-vehicles/fuel-efficiency/fuel-economy-basics.html#bf-toc-0, 28.11.15
+Source: Union of Concerned Scientists, Fuel Economy Basics [link](http://www.ucsusa.org/clean-vehicles/fuel-efficiency/fuel-economy-basics.html#bf-toc-0) , 28.11.15
 
 ## Exercise 3: Graphical Evidence
 
@@ -657,14 +653,14 @@ plot(mp, tag = "chart")
 #>
 ```
 
-If we now take a look at this motion chart, we can see the six different cars each being represented by a point.
+If we now take a look at this motion chart, we can see the six different cars each being represented by a circle.
 
-* The more the point is on the right side of the coordinate system, the more horsepower it has. 
-* The higher the point is, the more miles it can move with a gallon of fuel. 
-* The bigger the circle is, the heavier is the car. 
+* The further a circle is situated at the right side of the coordinate system, the more horsepower the car has. 
+* The higher a circle is placed in the coordinate system, the more miles the car can move with a gallon of fuel. 
+* The bigger the circle is, the heavier the car is. 
 * Torque is represented with colors. See the legend for clarification. 
 
-We can see that the point representing the Corvette is the one with the lowest miles per gallon over the course of the sample. But it also is the car with the highest horsepower, fastest acceleration (you can display acceleration by changing one of the values, for example mpg to accel), highest weight and highest torque.
+We can see that the circle representing the Corvette is the one with the lowest miles per gallon over the course of the sample. But it also is the car with the highest horsepower, fastest acceleration (you can display acceleration by changing one of the values, for example mpg to accel), highest weight and highest torque.
 In contrast to this, the cars with the highest miles per gallon values, the Honda Civic, has the lowest values for horsepower, torque, curb weight and the slowest acceleration. 
 Therefore we could assume that there might be a relationship between these values and fuel economy. We will take a look at this in later exercises. 
 
@@ -886,7 +882,7 @@ $$ \ln mpg_{it}  = T_t + \beta * \ln hp_{it} + \gamma * \ln torque_{it} + \tilde
 These results are level sets. For further information, click the info box "level sets". 
 
 #< info "level sets"
-Level Sets are also known as [iso-cost curves](https://en.wikipedia.org/wiki/Isocost).
+Level sets are also known as iso-cost curves.
 In our case the level set, or iso-cost curve, represents all different combinations of inputs which would then result to the same amount of costs. 
 In our problem set, it represents all possible combinations of characteristics which then result to the same costs of production.
 #>
@@ -1205,12 +1201,12 @@ After we now got an idea about how trade-offs between fuel economy and other veh
 
 ## Exercise 5.2: Cobb-Douglas: Technological Progress
 
-As you might have already noticed, we didn't touch on the $T_t$ of our formula yet. 
+As you might have already noticed, we did not touch on the $T_t$ of our formula yet. 
 $T_t$ is the estimator for Technological progress. It should capture the progress that occurred in a certain year $t$ and is, in our models, modeled nonparametrically as a **set of year fixed effects**. 
 
 Technological progress does not only represent increases in engine technology, but also improvements regarding for example  transmissions, rolling resistance, aerodynamics or even fuel composition. 
 As you might see, some of these effects cannot be influenced by manufacturers or customers.
-Beginning in the 1980 numerous technologies have been established in newly produced cars. Some of these progresses on the engine side have been for example replacing carburetors with fuel injection, or adding manual cylinder deactivation. Both lead to great improvements in fuel economy. 
+Beginning in the 1980 numerous technologies were established in newly produced cars. Some of these progresses on the engine side have been for example replacing carburetors with fuel injection, or adding manual cylinder deactivation. Both lead to great improvements in fuel economy. 
 If we compare a modern engine with an engine from around 1980 a modern engine has a camshaft, which is responsible for lifting the valves during its rotation and is placed above the engine head eliminating friction. Many new cars have multiple valves per cylinder as well as variable valve timing. While multiple valves allow a smoother flow of the fuel/air mixture within the engine, variable valve timing allows the engine to adjust to driving conditions. 
 Both a supercharger and a turbocharger use a turbine to force more air into the engine, resulting in an increase in efficiency.
 Within the last years, cylinder deactivation and hybrid technology are becoming more and more common. 
@@ -1655,7 +1651,7 @@ Source: Pavelescu Florin-Marius: Some aspects of the translog production functio
 #>
 
 The advantage a translog function has over a Cobb-Douglas Model is the flexible functional form. 
-This results in less restrictions on production elasticity and substitution elasticizes. 
+This results in fewer restrictions on production elasticity and substitution elasticizes. 
 But the disadvantages are that our results are more difficult to interpret. Therefore we will not interpret them as detailed as we did for the first three models.
 
 A translog function is a generalization the Cobb-Douglas production function and therefore we can use the same way of transforming the cost function into level sets as we did in Exercise 5.1 a).
@@ -1974,25 +1970,22 @@ awards(as.html=TRUE)
 Congratulations, You've earned this award for completing the Problem Set! 
 #>
 
-As a conclusion, we can say that, after analyzing the data we are not only able to estimate the trade-offs that consumers and manufacturers face when choosing between fuel economy, vehicle size, and vehicle power.
-The estimated trade-off between weight and fuel economy suggests that, fuel economy increases by over 4 percent for every 10 percent reduction in weight. On average, fuel economy increases by 2.7 percent for every 10 percent reduction in horsepower. Sadly, the effect of torque is less precisely estimated. 
-We are also able to estimate the technological advances that have occurred over these dimensions from 1980 to 2006. Our results imply that had we kept vehicle size and power at their 1980 levels, fuel economy would have been nearly 60 percent higher in 2006 compared to the 1980 level. 
+As a conclusion, we can say that, after analyzing the given data we are able to estimate the trade-offs that consumers and manufacturers face when choosing between fuel economy, vehicle size, and vehicle power. The estimated trade-offs between weight and fuel economy suggests that, fuel economy increases by over 4 percent for every 10 percent reduction of weight. On average, fuel economy increases by 2.7 percent for every 10 percent reduction of horsepower. However, the effect of torque is less precisely estimated. We are also able to estimate the technological advances that occurred over these dimensions from 1980 to 2006. As a consequence fuel economy would have been nearly 60 percent higher in 2006 com-pared to the 1980 level, if we had kept vehicle size and power constant at their 1980 levels. 
 
-We could use our results to potentially estimate how fuel economy could look in the future too.
+We could also use our results to potentially estimate how fuel economy could look in the fu-ture.
 
-Let's remember exercise 2. We derived that there is a positive correlation between CAFE standards and fuel economy. But would we be able to archive the increased fuel economy results we estimated, if CAFE standards would have been adapted constantly?
+Let us look back to exercise 2. There we found out that there was a positive correlation be-tween CAFE standards and fuel economy. But would we be able to achieve the increased fuel economy results we estimated, if CAFE standards had been adapted constantly?
 
-In order to answer this, we should look at this question from another perspective. Let's assume we are a customer and we would like to buy a new car. Would you buy a car with the same characteristics as your old car, only if fuel economy has increased over the last years since you've bought your old car? 
+In order to answer this, we should look at this question from another perspective. Let's as-sume we were a customer and would like to buy a new car. Would you choose a new car that has the same characteristics as your old car, if there had only been improvements on the fuel economy side since the time you had bought your old car? 
+Since most customers buy new cars with the intention to dispose of more horsepower, better torque and acceleration and so on, it is quite obvious that such a person would not buy a new car that lacks better engine characteristics. 
 
-Because many customers buy new cars in order to increase engine characteristics like horsepower, torque, acceleration and so on,  in this scenario most of the customers would not buy a new car as long as their old one would still work since those characteristics did not increase. Therefore the incentive to buy a new car is lost, and sales numbers would decrease considerably. 
+Therefore the incentive to buy a new car is lost, and sales numbers would decrease consid-erably.
 
-So what could be a solution? 
+So what could be a solution?
 
-One way of keeping incentive for manufacturers to increase fuel economy would be to convince customers that fuel economy is a very important characteristic when purchasing a new car. If consumers value fuel economy over other characteristics such as for example horsepower, manufactures will have to value fuel economy stronger.
-CAFE standards are (as we have seen) a good way for policy to ensure a minimum of fuel economy requirements for vehicles, but if the standards are too strict while customers want other characteristics, more and more manufacturers will just pay the fine in order to sell their cars.
+One way of maintaining incentives for manufacturers in order to increase fuel economy would be to convince customers of the importance of fuel economy when purchasing a new car. If consumers value fuel economy over other characteristics such as for example horse-power, manufactures will have to value fuel economy stronger. As we have seen, CAFE standards are a good way for policy makers to ensure a minimum of fuel economy require-ments for vehicles. But if the standards are too strict whereas customers want other charac-teristics, more and more manufacturers are willing to pay the fine in order to sell their cars.
 
-We also have to note, that all of our results are based on an approach from an economics perspective. As a result we regard the functional relationships within a car or an engine as a "black-box". Approaching this question from an engineer's perspective, we should probably take other models into consideration. 
-
+We also have to note that all our results are based on an approach from an economics' per-spective. As a result, we regard the functional relationship within a car or an engine as a "black-box". Approaching this question from an engineer's perspective, we should probably take other models into consideration.
 
 
 ## Exercise 8: References
@@ -2058,7 +2051,7 @@ We also have to note, that all of our results are based on an approach from an e
 
 * U.S. Department of Transportation, CAFE - Fuel Economy [link](http://www.nhtsa.gov/fuel-economy), 28.11.15
 
-* U.S. DEPARTMENT OF TRANSPORTATION, Corporate Average Fuel Economy (CAFE) Standards, Updated: Wednesday, August 27, 2014  [link](https://www.transportation.gov/mission/sustainability/corporate-average-fuel-economy-cafe-standards#sthash.OstJpwfC.dpuf), 28.11.15
+* U.S. Department of Transportation, Corporate Average Fuel Economy (CAFE) Standards, Updated: Wednesday, August 27, 2014  [link](https://www.transportation.gov/mission/sustainability/corporate-average-fuel-economy-cafe-standards#sthash.OstJpwfC.dpuf), 28.11.15
 
 * Union of Concerned Scientists, Fuel Economy Basics, [link](http://www.ucsusa.org/clean-vehicles/fuel-efficiency/fuel-economy-basics.html#bf-toc-0), 28.11.15
 

@@ -1,7 +1,10 @@
 This package constitutes an interactive R problem set based on the RTutor package (https://github.com/skranz/RTutor). 
 
-In his paper **"Automobiles on Steroids: Product Attribute Trade-Offs and Technological Progress in the Automobile Sector"**  Christopher R. Knittel (2012) estimates the technological progress since 1980 and the trade-offs faced when choosing between different attributes such as weight, fuel economy or engine power characteristics.
-In this interactive offline R Tutorial, we are going to gradually reproduce their study and discuss it. 
+In his paper **"Automobiles on Steroids: Product Attribute Trade-Offs and Technological Progress in the Automobile Sector"**  Christopher R. Knittel (2012) estimates the technological progress that occured since 1980 and the trade-offs faced when choosing between different attributes such as weight, fuel economy or engine power characteristics.
+
+In this interactive offline RTutor problem set, we are going to gradually reproduce his study and discuss it. 
+
+To be able to work through this problem set, follow the steps listed below.
 
 
 ## 1. Installation

@@ -98,7 +98,7 @@ info("read.dta()") # Run this line (Strg-Enter) to show info
 
 ```
 
-The Data contains model-level data on almost all vehicles sold in the United States between the years 1980 and 2006. In the next exercise, we will take a closer look at how the data is structured.
+The data contains model-level data on almost all vehicles sold in the United States between the years 1980 and 2006. In the next exercise, we will take a closer look at how the data is structured.
 
 
 ### b) Data Overview I
@@ -175,7 +175,7 @@ $$ \bar x = \dfrac{\sum_{i=1}^n w_{i} * x_{i}}{\sum_{i=1}^N x_{i}} $$
 
 This way, cars that were sold more often would be more meaningful and we would have a better representation of "the average sold car".
 
-Sadly we don't have any sales data in our data. 
+Unfortunately we don't have any sales data in our data. 
 
 Therefore in our data every cars values are weighted equally regarding means:
 
@@ -208,7 +208,7 @@ q1 = qplot(x=year, y= mpg, data = qdata)
 q1
 ```
 
-As you can see, we grouped the cars by `year`, and saved the means for `mpg` and `hp` into `qdata`, then we plotted every years mean value for mpg, to get an idea of how it changed over time.
+As you can see, we grouped the cars by `year`, and saved the means for `mpg` and `hp` into `qdata`, then we plotted every years mean value for `mpg`, to get an idea of how it changed over time.
 Your task now is to do this kind of plot for horsepower. You don't have to summarize and group anymore, just simply use `qdata`.
 
 ```{r "1__Descriptive_statistics__8"}
@@ -218,8 +218,8 @@ Your task now is to do this kind of plot for horsepower. You don't have to summa
 
 Let's take a look at the two graphs: 
 
-The difference in the two graphs is quiet obvious. 
-While `horsepower` has increased almost linear every single year with a slightly higher increase in the last years, `fuel economy` has drastically increased in the first five years but then started to fluctuate between 27 and 29 miles per gallon. Sadly even though fuel economy was fairly constant a small negative trend can be identified later in the sample. Overall, mpg increased by ~18 percent from 1980 to 2006. Especially in the last years, the years horsepower drastically increased, a decline in fuel economy is recognizable. One possible reason for this development of mpg will be discussed in the next exercise.
+The difference in the two graphs is quite obvious. 
+While `horsepower` has increased almost linear every single year with a slightly higher increase in the last years, `fuel economy` has drastically increased in the first five years but then started to fluctuate between 27 and 29 miles per gallon. Unfortunately even though fuel economy was fairly constant a small negative trend can be identified later in the sample. Overall, mpg increased by ~18 percent from 1980 to 2006. Especially in the last years, the years horsepower drastically increased, a decline in fuel economy is recognizable. One possible reason for this development of `mpg` will be discussed in the next exercise.
 
 
 *This exercise refers to page 3377 of the paper.* 
@@ -342,7 +342,7 @@ If we now take a look at the values of 2006 we can see that manufacturers with l
 
 After getting an idea of how the manufacturers' average non-sale weighted fleet looked like over the years, we might now be interested in how CAFE Standards changed compared to the average fuel economy.
 
-To visualize how the unweighted fuel economy changed compared to CAFE standards over the years, we can plot both values. The data on CAFE standards were taken from the "Summary of Fuel Economy Performance" by the National Highway Traffic Safety Admin-istration [link](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwjYwcqkmbPJAhXBkXIKHdhNBmoQFggmMAE&url=http%3A%2F%2Fwww.nhtsa.gov%2Fstaticfiles%2Frulemaking%2Fpdf%2Fcafe%2FOct2012_Summary_Report.pdf&usg=AFQjCNG8qgMJXK0xOYjYu2nDUy67FAM4qg&cad=rja).
+To visualize how the unweighted fuel economy changed compared to CAFE standards over the years, we can plot both values. The data on CAFE standards were taken from the "Summary of Fuel Economy Performance" by the National Highway Traffic Safety Administration [link](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwjYwcqkmbPJAhXBkXIKHdhNBmoQFggmMAE&url=http%3A%2F%2Fwww.nhtsa.gov%2Fstaticfiles%2Frulemaking%2Fpdf%2Fcafe%2FOct2012_Summary_Report.pdf&usg=AFQjCNG8qgMJXK0xOYjYu2nDUy67FAM4qg&cad=rja).
 
 Here we will use the general unweighted mean value for each year, not taking different manufacturers into account, because we would like to get an overall idea on how all cars have changed. At this point we are not interested in which manufacturers did not reach the target fuel economy. 
 
@@ -363,7 +363,7 @@ cafecars_mpg
 
 As we can see, there was an important increase in CAFE Standards for cars in the early years, but after 1985 the standards remained on the same level. 
 In contrast, CAFE Standards decreased in 1986, but rose up back to the 1985 level in 1990. In relation to this, the average car fuel economy of our sample was higher than the requirements most of the time.
-We have to note here again, that our mean values are not sales weighted. This might result into biased values, as a car model with lower sales is "overrepresented", while car models with higher sales are "underrepresented".
+We have to note here again, that our mean values are not sales weighted. This might result into biased values, as car models with lower sales are "overrepresented", while car models with higher sales are "underrepresented".
 Nevertheless we can estimate a trend. While standards increased, fuel economy was raised as well. After 1990, the year when CAFE standards were modified for the last time in our sample, the mean fuel economy decreased almost every year. In 2006, it even fell below the requirement line. Therefore we might be able to find a correlation between fuel economy and CAFE standards.
 
 Let's have a look at the correlation coefficient. 
@@ -372,11 +372,11 @@ Let's have a look at the correlation coefficient.
 cor(cafe$cafe, cafe$mpg)
 ```
 
-Our correlation coefficient is `0.8058689` and even though our sample is quite small, this sug-gests a strong positive linear relationship. This indicates that if we increased the CAFE Standards, this would result in higher average fuel economy. This would be one way to ex-plain why there was an increase in fuel economy early, which later changed to increasing other characteristics such as for example horsepower. 
+Our correlation coefficient is `0.8058689` and even though our sample is quite small, this suggests a strong positive linear relationship. This indicates that if we increased the CAFE Standards, this would result in higher average fuel economy. This would be one way to explain why there was an increase in fuel economy early, which later changed to increasing other characteristics such as for example horsepower. 
 
 info("cum hoc ergo propter hoc") # Run this line (Strg-Enter) to show info
 
-What we know after this exercise is that, implying a causal relationship, an increase in CAFE Standards should result in an increase in fuel economy. As long as the CAFE Standards are fulfilled, which equals to not having to pay a fine, manufacturers will increase characteristics which are important to the customer. Examples of these characteristics are acceleration or horsepower. Manufacturers who do not comply with the standards value the consumer pref-erences higher than the resulting fine. But before we are using this information in order to give advice, we have to get a better understanding of how different car attributes influence fuel economy. 
+What we know after this exercise is that, implying a causal relationship, an increase in CAFE Standards should result in an increase in fuel economy. As long as the CAFE Standards are fulfilled, which equals to not having to pay a fine, manufacturers will increase characteristics which are important to the customer. Examples of these characteristics are acceleration or horsepower. Manufacturers who do not comply with the standards value the consumer preferences higher than the resulting fine. But before we are using this information in order to give advice, we have to get a better understanding of how different car attributes influence fuel economy. 
 
 This will be the topic of exercise 3. 
 
@@ -535,7 +535,7 @@ Before we start using our data to get some empirical results, we will think of a
 
 As we already know, we don't have any sales data. Therefore we can't take sales into account. 
 
-What we can do though, is to take costs into account. 
+What we can do though, is taking costs into account. 
 If we assume the costs of producing a car $i$ with given attributes $mpg_{it}$,$w_{it}$,$hp_{it}$,$tq_{it}$ at a certain time $t$, this will be represented as a marginal cost function: 
 
 $$ c_{it} = C(mpg_{it},w_{it},hp_{it},tq_{it},t) $$ 
@@ -625,7 +625,7 @@ As our data allows, we will try to control a number of these factors, labelled a
 
 Let's start with the empirical work in the next exercise.
 
-*This exercise refers to page 3371 of the paper.*
+*This exercise refers to page 3371 and 3372 of the paper.*
 
 ## Exercise 5.1: Empirical Model: Cobb-Douglas
 
@@ -794,7 +794,7 @@ Source: Herbert Stocker: Methoden der Empirischen Wirtschaftsforschung Chapter 1
 
 ### e) Model 2
 
-As you've seen, we might have endogeneity in our model. One way to fix it, is by using Panel data (see the *info* box) and adding fixed effects (see the *info* box). If we now think that cars have changed over time, but are constant across manufacturers we now have to add fixed manufacturer effects to Model 1.
+As you've seen, we might have endogeneity in our model. One way to fix it, is by using Panel data (see the *info* box) and adding fixed effects (see the *info* box). If we now think that cars have changed over time, but are constant across manufacturers we can add fixed manufacturer effects to Model 1.
 
 info("Panel data") # Run this line (Strg-Enter) to show info
 
@@ -873,7 +873,7 @@ $T_t$ is the estimator for Technological progress. It should capture the progres
 Technological progress does not only represent increases in engine technology, but also improvements regarding for example  transmissions, rolling resistance, aerodynamics or even fuel composition. 
 As you might see, some of these effects cannot be influenced by manufacturers or customers.
 Beginning in the 1980 numerous technologies were established in newly produced cars. Some of these progresses on the engine side have been for example replacing carburetors with fuel injection, or adding manual cylinder deactivation. Both lead to great improvements in fuel economy. 
-If we compare a modern engine with an engine from around 1980 a modern engine has a camshaft, which is responsible for lifting the valves during its rotation and is placed above the engine head eliminating friction. Many new cars have multiple valves per cylinder as well as variable valve timing. While multiple valves allow a smoother flow of the fuel/air mixture within the engine, variable valve timing allows the engine to adjust to driving conditions. 
+If we compare a modern engine with an engine from around 1980 a modern engine has a camshaft, which is responsible for lifting the valves during its rotation and is placed above the engine head thus eliminating friction. Many new cars have multiple valves per cylinder as well as variable valve timing. While multiple valves allow a smoother flow of the fuel/air mixture within the engine, variable valve timing allows the engine to adjust to driving conditions. 
 Both a supercharger and a turbocharger use a turbine to force more air into the engine, resulting in an increase in efficiency.
 Within the last years, cylinder deactivation and hybrid technology are becoming more and more common. 
 Hybrid technology is a combination of a traditional engine with an electric motor. This allows a car to run on only the engine or the electric motor or both. The electric motor can be used as long as enough electricity stored in a battery. The battery charges while the car is in motion and the electric motor is not used. Obviously having the possibility to "generate" energy that is later used to move the vehicle without using any fuel, has an immense positive impact on fuel economy. 
@@ -1117,7 +1117,7 @@ mean(cars1980$lmpg)
 
 So the value we get from our regression is `3.106287`, which is equal to the mean values of this year. We can see that the results of our models are equal to the real value, therefore our calculation appears to be correct.  
 
-If we now want to estimate how the same fictive car would ceteris paribus look like in year 2006, we have to use the estimated $T_{2006}$ instead of $T_0$
+If we now want to estimate how the same fictive car would ceteris paribus look like in year 2006, we have to use the estimated $T_{2006}$ instead of $T_1980$
 
 ```{r "5_2__Cobb_Douglas__Technological_Progress__13"}
 # we use the same calculations as before, but we change T to the value of 2006
@@ -1439,7 +1439,7 @@ As we already noticed, the technological progress estimates are very similar acr
 If we take a closer look at the graph, we can see that early in the sample (year 1981 to 1986) the increase of progress was greatest. This is consistent with what we estimated in exercise 2. 
 Another reason beside the CAFE standards might be, that early in the sample the gasoline prices were high, and therefore the industry had to come up with ideas to increase fuel economy in order to sell their cars.
 After these years the technological progress is still increasing considerably, but the increase has obviously slowed down.
-All results for the Cobb-Douglas Models (1-3) are significant on the one percent level. The same applies to out Translog Models (4-6).
+All results for the Cobb-Douglas Models (1-3) are significant on the one percent level. The same applies to our Translog Models (4-6).
 It is interesting that even though these results are very similar, we can still see small differences between the different models.
 Our Cobb-Douglas models yield slightly higher estimates of progress over the year than the Translog models. This might come from the functional part of the translog function. All of the models imply that, conditional on weight and power characteristics, the log of fuel economy is at least over 0.485 greater in 2006, compared to 1980.
 
